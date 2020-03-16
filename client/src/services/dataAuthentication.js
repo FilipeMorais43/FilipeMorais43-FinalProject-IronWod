@@ -4,8 +4,9 @@ const instance = axios.create({
   baseURL: '/api/authentication'
 });
 
-const signUp = data =>
-  new Promise((resolve, reject) => {
+const signUp = data => {
+  console.log(data);
+  return new Promise((resolve, reject) => {
     instance
       .post('/sign-up', data)
       .then(result => {
@@ -14,6 +15,7 @@ const signUp = data =>
       })
       .catch(reject);
   });
+};
 
 const signIn = data =>
   new Promise((resolve, reject) => {

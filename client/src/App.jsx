@@ -62,7 +62,14 @@ class App extends Component {
               <Route path="/timers/single" component={TimerSingle} />
               <Route path="/exercise" exact component={WorkoutDay} />
               <Route path="/exercise/list" exact component={WorkoutList} />
-              <Route path="/sign-up" component={SignUp} />
+              <ProtectedRoute
+                path="/signup"
+                authorized={!this.state.user}
+                redirect={'/'}
+                render={props => (
+                  <SignUp {...props} updateUserInformation={this.updateUserInformation} />
+                )}
+              />
               <ProtectedRoute
                 path="/sign-in"
                 authorized={!this.state.user}

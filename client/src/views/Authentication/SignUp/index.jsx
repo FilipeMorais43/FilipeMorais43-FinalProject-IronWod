@@ -11,6 +11,7 @@ class SignUp extends Component {
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleFormSubmission = this.handleFormSubmission.bind(this);
+    console.log(this.props);
   }
 
   handleFormSubmission(event) {
