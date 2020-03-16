@@ -17,4 +17,4 @@ const schema = new mongoose.Schema({
   }
 });
 
-module.exports = mongoose.model('Moviment', schema);
+module.exports = mongoose.model('Movement', schema);

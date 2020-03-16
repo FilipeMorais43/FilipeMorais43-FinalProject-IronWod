@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { add } from '../../services/movement';
+import { create } from '../../services/movement';
 import './style.scss';
 
 class NewMovement extends Component {
@@ -22,7 +22,7 @@ class NewMovement extends Component {
   };
 
   addMovement() {
-    add(this.state)
+    create(this.state)
       .then(result => {
         console.log(result);
       })

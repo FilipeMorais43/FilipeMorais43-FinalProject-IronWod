@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const instance = axios.create({
   // temos de adicionar aqui o nosso api no URL
-  baseURL: '/api/moviment'
+  baseURL: '/api/movement'
 });
 
 // service para gerar lista de movimentos

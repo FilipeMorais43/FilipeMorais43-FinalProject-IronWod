@@ -14,7 +14,7 @@ const NavBar = props => {
         console.log(error);
       });
   };
-
+  console.log(props, 'Hello men');
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Navbar.Brand href="/">IronWod</Navbar.Brand>
@@ -26,7 +26,7 @@ const NavBar = props => {
             </div>
             {props.user.name}'s Profile
           </Nav.Link>
-          <Nav.Link to="mywods/:id" MyWods></Nav.Link>
+          <Nav.Link to="mywods/:id"> My Wods</Nav.Link>
           <button onClick={handleSignOut}>Sign Out</button>
         </Fragment>
       )) || (

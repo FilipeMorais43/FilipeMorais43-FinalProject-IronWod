@@ -13,7 +13,7 @@ const serveFavicon = require('serve-favicon');
 const bindUserToViewLocals = require('./middleware/bind-user-to-view-locals.js');
 const passportConfigure = require('./passport-configuration.js');
 const indexRouter = require('./routes/index');
-const movimentRouter = require('./routes/moviment');
+const movementRouter = require('./routes/movement');
 const authenticationRouter = require('./routes/authentication');
 
 const app = express();
@@ -45,7 +45,7 @@ app.use(bindUserToViewLocals);
 
 app.use('/', indexRouter);
 app.use('/api/authentication', authenticationRouter);
-app.use('/api/moviment', movimentRouter);
+app.use('/api/movement', movementRouter);
 
 // Catch missing routes and forward to error handler
 app.use((req, res, next) => {

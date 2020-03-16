@@ -25,7 +25,7 @@ class App extends Component {
     super();
     this.state = {
       //quando autenticação feita, mudar loaded para FALSE
-      loaded: true,
+      loaded: false,
       //...
       user: null
     };
@@ -35,6 +35,7 @@ class App extends Component {
   componentDidMount() {
     loadUserInformation()
       .then(user => {
+        console.log(user, 'Looking for user');
         this.updateUserInformation(user);
         this.setState({
           loaded: true
@@ -51,9 +52,10 @@ class App extends Component {
     });
   }
   render() {
+    console.log(this.state.loaded, 'loaded');
     return (
       <div>
-        {(this.state.loaded && (
+        {this.state.loaded && (
           <BrowserRouter>
             <NavBar user={this.state.user} updateUserInformation={this.updateUserInformation} />
             <Switch>
@@ -100,7 +102,7 @@ class App extends Component {
               <Redirect to="/error" />
             </Switch>
           </BrowserRouter>
-        )) || <span>Loading...</span>}
+        )}
       </div>
     );
   }

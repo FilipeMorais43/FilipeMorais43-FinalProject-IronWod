@@ -3,13 +3,13 @@
 const { Router } = require('express');
 const router = new Router();
 
-const Moviment = require('./../models/moviment');
+const Movement = require('./../models/movement');
 
 // router forlist of moviments
 router.get('/list', async (req, res, next) => {
   try {
-    const moviments = await Moviment.find();
-    res.json({ moviments });
+    const movements = await Movement.find();
+    res.json({ movements });
   } catch (error) {
     next(error);
   }
@@ -19,8 +19,8 @@ router.get('/list', async (req, res, next) => {
 router.get('/:id', async (req, res, next) => {
   const id = req.params.id;
   try {
-    const moviment = await Moviment.findById(id);
-    res.json({ moviment });
+    const movement = await Movement.findById(id);
+    res.json({ movement });
   } catch (error) {
     next(error);
   }
@@ -30,11 +30,13 @@ router.get('/:id', async (req, res, next) => {
 
 router.post('/create', async (req, res, next) => {
   const { name, setup, protip } = req.body;
-  const newMoviment = { name, setup, protip };
+  const newMovement = { name, setup, protip };
   try {
-    const newMovimentResult = await Moviment.create(newMoviment);
-    res.json({ newMovimentResult });
+    const newMovementResult = await Movement.create(newMovement);
+    res.json({ newMovementResult });
   } catch (error) {
     next(error);
   }
 });
+
+module.exports = router;

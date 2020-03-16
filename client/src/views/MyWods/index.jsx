@@ -11,8 +11,8 @@ class MyWods extends Component {
           <h1>My List of Wods go here</h1>
         </div>
         <div>
-          <Link to="/profile/edit">Create a Wod</Link>
-          <Link to="/profile/edit">Create a Movement</Link>
+          <Link to="/movement/create">Create a Wod</Link>
+          <Link to="/wod/create">Create a Movement</Link>
         </div>
       </div>
     );
