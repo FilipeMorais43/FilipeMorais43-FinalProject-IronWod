@@ -14,19 +14,18 @@ const NavBar = props => {
         console.log(error);
       });
   };
-  console.log(props, 'Hello men');
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Navbar.Brand href="/">IronWod</Navbar.Brand>
       {(props.user && (
         <Fragment>
-          <Nav.Link to="/private">
+          <Nav.Link href="/profile">
             <div className="profile__picture">
               <img src={props.user.picture} alt={props.user.name} />
             </div>
             {props.user.name}'s Profile
           </Nav.Link>
-          <Nav.Link to="mywods/:id"> My Wods</Nav.Link>
+          <Nav.Link href="mywods"> My Wods</Nav.Link>
           <button onClick={handleSignOut}>Sign Out</button>
         </Fragment>
       )) || (

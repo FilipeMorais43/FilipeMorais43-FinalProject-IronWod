@@ -17,6 +17,8 @@ import HeroWodSingle from './views/HeroWodSingle';
 import HeroWod from './views/HeroWod';
 import MovementList from './views/MovementList';
 import MovementSingle from './views/MovementSingle';
+import MyWods from './views/MyWods';
+import NewMovement from './views/NewMovement';
 
 import { loadUserInformation } from './services/dataAuthentication';
 
@@ -46,13 +48,23 @@ class App extends Component {
       });
   }
 
+  componentDidUpdate() {
+    console.log('componentDidUpdate');
+  }
+
   updateUserInformation(user) {
+    console.log('im running and im updating user info');
     this.setState({
       user
     });
+    console.log(user);
+    console.log(this.state);
   }
+
   render() {
     console.log(this.state.loaded, 'loaded');
+    console.log(this.state.user, 'user app.jsx');
+
     return (
       <div>
         {this.state.loaded && (
@@ -64,6 +76,9 @@ class App extends Component {
               <Route path="/herowod/single" component={HeroWodSingle} />
               <Route path="/movement" exact component={MovementList} />
               <Route path="/movement/single" exact component={MovementSingle} />
+              <Route path="/mywods" exact component={MyWods} />
+              <Route path="/movement/create" exact component={NewMovement} />
+
               <ProtectedRoute
                 path="/sign-up"
                 authorized={!this.state.user}

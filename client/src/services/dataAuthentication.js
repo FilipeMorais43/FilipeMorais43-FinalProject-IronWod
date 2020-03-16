@@ -22,6 +22,7 @@ const signIn = data =>
     instance
       .post('/sign-in', data)
       .then(result => {
+        console.log(result);
         const user = result.data.user;
         resolve(user);
       })

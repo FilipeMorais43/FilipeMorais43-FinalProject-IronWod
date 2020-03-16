@@ -5,7 +5,7 @@ class SignIn extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: 'cr7@goat.com',
+      email: 'fmorais43@gmail.com',
       password: '123456789'
     };
     this.handleInputChange = this.handleInputChange.bind(this);
