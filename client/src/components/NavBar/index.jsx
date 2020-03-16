@@ -4,46 +4,49 @@ import './style.scss';
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import { signOut } from '../../services/dataAuthentication';
 
-class NavBar extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-    this.handleSignOut = this.handleSignOut.bind(this);
-  }
-
-  handleSignOut(props) {
-    signOut(props)
+const NavBar = props => {
+  const handleSignOut = () => {
+    signOut()
       .then(() => {
         props.updateUserInformation(null);
       })
       .catch(error => {
         console.log(error);
       });
-  }
+  };
 
-  render() {
-    return (
-      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-        <Navbar.Brand href="/">CrossFit</Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-
-        <Navbar.Collapse id="responsive-navbar-nav"></Navbar.Collapse>
-        <Nav className="mr-auto">
-          <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-            <NavDropdown.Item href="/timers">Timers</NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item href="/exercise/list">Exercises</NavDropdown.Item>
-          </NavDropdown>
-          <NavDropdown title="profile" id="collasible-nav-dropdown">
-            <NavDropdown.Item href="/sign-out">Sign-out</NavDropdown.Item>
-            <NavDropdown.Divider />
-
-            <NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
-          </NavDropdown>
-        </Nav>
-      </Navbar>
-    );
-  }
-}
+  return (
+    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+      <Navbar.Brand href="/">IronWod</Navbar.Brand>
+      {(props.user && (
+        <Fragment>
+          <Nav.Link to="/private">
+            <div className="profile__picture">
+              <img src={props.user.picture} alt={props.user.name} />
+            </div>
+            {props.user.name}'s Profile
+          </Nav.Link>
+          <Nav.Link to="mywods/:id" MyWods></Nav.Link>
+          <button onClick={handleSignOut}>Sign Out</button>
+        </Fragment>
+      )) || (
+        <Fragment>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav className="mr-auto"></Nav>
+            <Nav>
+              <Nav.Link href="/herowod">HeroWod</Nav.Link>
+              <Nav.Link href="/movement">Movements</Nav.Link>
+              <Nav.Link href="/sign-in">Log In</Nav.Link>
+              <Nav.Link eventKey={2} href="/sign-up">
+                Sign Up
+              </Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Fragment>
+      )}
+    </Navbar>
+  );
+};
 
 export default NavBar;

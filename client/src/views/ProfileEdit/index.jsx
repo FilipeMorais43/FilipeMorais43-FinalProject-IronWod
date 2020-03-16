@@ -32,7 +32,7 @@ class ProfileEdit extends Component {
         picture
       });
       this.props.updateUserInformation(user);
-      this.props.history.push('/private');
+      this.props.history.push('/profile');
     } catch (error) {
       console.log(error);
     }

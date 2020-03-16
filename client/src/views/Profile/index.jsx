@@ -4,12 +4,16 @@ import { Component } from 'react';
 
 class Profile extends Component {
   render() {
+    const user = this.props.user;
     return (
       <div>
-        <h1>Profile is here</h1>
-        <p>Picture</p>
-        <p>Name</p>
-        <p>Email</p>
+        <figure>
+          <img src={user.picture} alt={user.name} />
+        </figure>
+        <div>
+          <h1>{user.name}</h1>
+          <span>{user.email}</span>
+        </div>
         <Link to="/profile/edit">Edit Profile</Link>
       </div>
     );

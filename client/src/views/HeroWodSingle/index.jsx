@@ -4,7 +4,7 @@ class TimerSingle extends Component {
   render() {
     return (
       <div>
-        <h1>Single Timer goes here</h1>
+        <h1>HeroWod Single goes here</h1>
       </div>
     );
   }

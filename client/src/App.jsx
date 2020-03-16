@@ -7,16 +7,16 @@ import NavBar from './components/NavBar';
 import ProtectedRoute from './components/ProtectedRoute';
 // adicionar Footer e Exercise mais tarde
 
-import ErrorView from './views/Error';
+import Error from './views/Error';
 import SignIn from './views/Authentication/SignIn';
 import SignUp from './views/Authentication/SignUp';
 import Home from './views/Home';
 import Profile from './views/Profile';
 import ProfileEdit from './views/ProfileEdit';
-import TimerSingle from './views/TimerSingle';
-import TimerList from './views/TimerList';
-import WorkoutDay from './views/WorkoutDay';
-import WorkoutList from './views/WorkoutsList';
+import HeroWodSingle from './views/HeroWodSingle';
+import HeroWod from './views/HeroWod';
+import MovementList from './views/MovementList';
+import MovementSingle from './views/MovementSingle';
 
 import { loadUserInformation } from './services/dataAuthentication';
 
@@ -58,12 +58,12 @@ class App extends Component {
             <NavBar user={this.state.user} updateUserInformation={this.updateUserInformation} />
             <Switch>
               <Route path="/" exact component={Home} />
-              <Route path="/timers" exact component={TimerList} />
-              <Route path="/timers/single" component={TimerSingle} />
-              <Route path="/exercise" exact component={WorkoutDay} />
-              <Route path="/exercise/list" exact component={WorkoutList} />
+              <Route path="/herowod" exact component={HeroWod} />
+              <Route path="/herowod/single" component={HeroWodSingle} />
+              <Route path="/movement" exact component={MovementList} />
+              <Route path="/movement/single" exact component={MovementSingle} />
               <ProtectedRoute
-                path="/signup"
+                path="/sign-up"
                 authorized={!this.state.user}
                 redirect={'/'}
                 render={props => (
@@ -81,7 +81,7 @@ class App extends Component {
               <ProtectedRoute
                 authorized={this.state.user}
                 redirect="/sign-in"
-                path="/private/edit"
+                path="/profile/edit"
                 render={props => (
                   <ProfileEdit
                     updateUserInformation={this.updateUserInformation}
@@ -96,9 +96,11 @@ class App extends Component {
                 path="/profile"
                 render={props => <Profile user={this.state.user} {...props} />}
               />
+              <Route path="/error" component={Error} />
+              <Redirect to="/error" />
             </Switch>
           </BrowserRouter>
-        )) || <span>Loadin...</span>}
+        )) || <span>Loading...</span>}
       </div>
     );
   }

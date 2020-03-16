@@ -7,11 +7,11 @@ class Home extends Component {
     return (
       <Fragment>
         <h1>Home View</h1>
-        <Link to={'/timers'}>
-          <h1>Timers</h1>
+        <Link to={'/herowod'}>
+          <h1>HeroWod</h1>
         </Link>
-        <Link to={'/exercise'}>
-          <h1>Work Out Of The Day</h1>
+        <Link to={'/movement'}>
+          <h1>Movement List</h1>
         </Link>
       </Fragment>
     );

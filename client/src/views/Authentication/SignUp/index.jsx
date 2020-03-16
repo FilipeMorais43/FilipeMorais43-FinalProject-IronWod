@@ -5,13 +5,12 @@ class SignUp extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: 'Cristiano Ronaldo',
-      email: 'cr7@goat.com',
-      password: '123456789'
+      name: '',
+      email: '',
+      password: ''
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleFormSubmission = this.handleFormSubmission.bind(this);
-    console.log(this.props);
   }
 
   handleFormSubmission(event) {
