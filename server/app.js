@@ -43,7 +43,7 @@ app.use(passport.session());
 app.use(bindUserToViewLocals);
 
 app.use('/', indexRouter);
-app.use('/authentication', authenticationRouter);
+app.use('/api/authentication', authenticationRouter);
 
 // Catch missing routes and forward to error handler
 app.use((req, res, next) => {
