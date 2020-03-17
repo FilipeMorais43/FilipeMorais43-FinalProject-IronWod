@@ -19,7 +19,7 @@ class MovementList extends Component {
     list()
       .then(movements => {
         this.setState({
-          movements: movements.movements
+          movements
         });
       })
       .catch(error => {
@@ -33,7 +33,9 @@ class MovementList extends Component {
         <div className="movement__list">
           {/* <pre>{JSON.stringify(this.state.movements,null, 2)}</pre> */}
           {this.state.movements.map(movement => (
-             <Link to={`/movement/single/${movement._id}`}  key={movement._id}> {movement.name} </Link>
+             <Link to={`movement/${movement._id}`}  key={movement._id}> 
+            <p>{movement.name}</p>         
+             </Link>
           ))}
      
         </div>

@@ -19,8 +19,8 @@ const list = async () => {
 //service para mostrar um movimento
 const single = async id => {
   const result = await instance.get(`/${id}`);
-  const moviment = result.data;
-  return moviment;
+  const movement = result.data;
+  return movement;
 };
 
 //service para criar um movimento
@@ -33,7 +33,6 @@ const create = async (data) => {
     execution : data.execution
   
   });
- 
   const newMovement = result.data;
   return newMovement;
 };
@@ -41,8 +40,8 @@ const create = async (data) => {
 //service para editar um moviment
 const edit = async (id, name) => {
   const result = await instance.put(`/edit/${id}`, { name });
-  const moviment = result.data;
-  return moviment;
+  const movement = result.data;
+  return movement;
 };
 // service para eleminar um moviment
 const remove = async id => {

@@ -28,7 +28,7 @@ class NewMovement extends Component {
   addMovement(event) {
     event.preventDefault();
     const {name, setup ,protip, description ,execution} = this.state
-    create({name ,setup ,protip, description ,execution})
+    create({name ,setup ,protip, description ,execution} )
       .then(result => {
         console.log(result);
       })

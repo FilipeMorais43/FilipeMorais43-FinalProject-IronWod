@@ -71,9 +71,9 @@ class App extends Component {
               <Route path="/herowod" exact component={HeroWod} />
               <Route path="/herowod/single" component={HeroWodSingle} />
               <Route path="/movement" exact component={MovementList} />
-              <Route path="/movement/single" exact component={MovementSingle} />
-              <Route path="/mywods" exact component={MyWods} />
               <Route path="/movement/create" exact component={NewMovement} />
+              <Route path="/movement/:id" exact component={MovementSingle} />
+              <Route path="/mywods" exact component={MyWods} />
 
               <ProtectedRoute
                 path="/sign-up"
