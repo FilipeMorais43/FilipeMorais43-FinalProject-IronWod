@@ -9,7 +9,7 @@ const router = new Router();
 router.post(
   '/sign-up',
   passport.authenticate('local-sign-up', {
-    successRedirect: '/private',
+    successRedirect: '/api/authentication/user-information',
     failureRedirect: '/sign-up'
   })
 );
@@ -17,7 +17,7 @@ router.post(
 router.post(
   '/sign-in',
   passport.authenticate('local-sign-in', {
-    successRedirect: '/private',
+    successRedirect: '/api/authentication/user-information',
     failureRedirect: '/sign-in'
   })
 );
