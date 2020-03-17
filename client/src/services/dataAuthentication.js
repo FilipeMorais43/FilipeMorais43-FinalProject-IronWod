@@ -5,7 +5,7 @@ const instance = axios.create({
 });
 
 const signUp = data => {
-  console.log(data);
+
   return new Promise((resolve, reject) => {
     instance
       .post('/sign-up', data)
@@ -22,7 +22,7 @@ const signIn = data =>
     instance
       .post('/sign-in', data)
       .then(result => {
-        console.log(result);
+  
         const user = result.data.user;
         resolve(user);
       })

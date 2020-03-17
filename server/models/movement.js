@@ -5,7 +5,8 @@ const mongoose = require('mongoose');
 const schema = new mongoose.Schema({
   name: {
     type: String,
-    trim: true
+    trim: true,
+    required:true
   },
   setup: {
     type: String,
@@ -14,6 +15,15 @@ const schema = new mongoose.Schema({
   protip: {
     type: String,
     trim: true
+  },
+  descriptiom: {
+    type: String,
+    trim: true
+  },
+  execution:{
+    type:String,
+    trim: true,
+    required: true
   }
 });
 

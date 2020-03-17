@@ -29,8 +29,8 @@ router.get('/:id', async (req, res, next) => {
 //router for create moviment
 
 router.post('/create', async (req, res, next) => {
-  const { name, setup, protip } = req.body;
-  const newMovement = { name, setup, protip };
+  const { name, setup, protip, description, execution } = req.body;
+  const newMovement = { name, setup, protip, description,execution };
   try {
     const newMovementResult = await Movement.create(newMovement);
     res.json({ newMovementResult });

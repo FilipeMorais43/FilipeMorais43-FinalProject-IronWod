@@ -37,7 +37,7 @@ class App extends Component {
   componentDidMount() {
     loadUserInformation()
       .then(user => {
-        console.log(user, 'Looking for user');
+     
         this.updateUserInformation(user);
         this.setState({
           loaded: true
@@ -48,22 +48,18 @@ class App extends Component {
       });
   }
 
-  componentDidUpdate() {
-    console.log('componentDidUpdate');
-  }
+ 
 
   updateUserInformation(user) {
-    console.log('im running and im updating user info');
+ 
     this.setState({
       user
     });
-    console.log(user);
-    console.log(this.state);
+
   }
 
   render() {
-    console.log(this.state.loaded, 'loaded');
-    console.log(this.state.user, 'user app.jsx');
+
 
     return (
       <div>

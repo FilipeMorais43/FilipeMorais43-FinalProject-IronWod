@@ -8,7 +8,7 @@ const instance = axios.create({
 // service para gerar lista de movimentos
 const list = async () => {
   try {
-    const result = await instance.get('/');
+    const result = await instance.get('/list');
     const moviments = result.data;
     return moviments;
   } catch (error) {
@@ -24,10 +24,18 @@ const single = async id => {
 };
 
 //service para criar um movimento
-const create = async name => {
-  const result = await instance.post(`/create`, { name });
-  const newMoviment = result.data;
-  return newMoviment;
+const create = async (data) => {
+  const result = await instance.post(`/create`, { 
+    name : data.name ,
+    setup : data.setup ,
+    protip : data.protip,
+    description : data.description,
+    execution : data.execution
+  
+  });
+ 
+  const newMovement = result.data;
+  return newMovement;
 };
 
 //service para editar um moviment
@@ -45,4 +53,4 @@ const remove = async id => {
 
 export { list, single, create, edit, remove };
 
-//adicionar add no export após tirar coments e usar o metodo
+

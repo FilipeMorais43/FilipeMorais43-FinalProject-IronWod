@@ -5,23 +5,30 @@ class NewMovement extends Component {
   constructor() {
     super();
     this.state = {
-      name: ''
+      name: '',
+      setup:'',
+      protip:'',
+      description:'',
+      execution:''
     };
+
+    this.addMovement=this.addMovement.bind(this);
+    this.handleChange= this.handleChange.bind(this);
   }
 
   handleChange = event => {
     const inputName = event.target.name;
     const value = event.target.value;
 
-    console.log(inputName);
-
     this.setState({
       [inputName]: value
     });
   };
 
-  addMovement() {
-    create(this.state)
+  addMovement(event) {
+    event.preventDefault();
+    const {name, setup ,protip, description ,execution} = this.state
+    create({name ,setup ,protip, description ,execution})
       .then(result => {
         console.log(result);
       })
@@ -31,6 +38,7 @@ class NewMovement extends Component {
   render() {
     return (
       <form onSubmit={this.addMovement}>
+        {/* <pre>{JSON.stringify(this.state)}</pre> */}
         <label htmlFor="name">Name</label>
         <input
           type="text"
@@ -39,6 +47,42 @@ class NewMovement extends Component {
           value={this.state.name}
           onChange={this.handleChange}
           placeholder="Movement name"
+        />
+        <label htmlFor="description">Description</label>
+        <input
+          type="text"
+          id="description"
+          name="description"
+          value={this.state.description}
+          onChange={this.handleChange}
+          placeholder="Movement description"
+        />
+        <label htmlFor="setup">Setup</label>
+        <input
+          type="text"
+          id="setup"
+          name="setup"
+          value={this.state.setup}
+          onChange={this.handleChange}
+          placeholder="Movement setup"
+        />
+        <label htmlFor="execution">Execution</label>
+        <input
+          type="text"
+          id="execution"
+          name="execution"
+          value={this.state.execution}
+          onChange={this.handleChange}
+          placeholder="Movement execution"
+        />
+        <label htmlFor="protip">Protip</label>
+        <input
+          type="text"
+          id="protip"
+          name="protip"
+          value={this.state.protip}
+          onChange={this.handleChange}
+          placeholder="Movement protip"
         />
 
         <button type="submit">Add New</button>
