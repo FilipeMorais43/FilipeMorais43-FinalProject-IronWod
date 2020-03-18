@@ -5,7 +5,6 @@ const instance = axios.create({
 });
 
 const signUp = data => {
-
   return new Promise((resolve, reject) => {
     instance
       .post('/sign-up', data)
@@ -22,7 +21,6 @@ const signIn = data =>
     instance
       .post('/sign-in', data)
       .then(result => {
-  
         const user = result.data.user;
         resolve(user);
       })
