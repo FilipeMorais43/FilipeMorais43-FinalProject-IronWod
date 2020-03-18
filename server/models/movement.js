@@ -16,7 +16,7 @@ const schema = new mongoose.Schema({
     type: String,
     trim: true
   },
-  descriptiom: {
+  description:{
     type: String,
     trim: true
   },

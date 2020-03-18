@@ -1,7 +1,7 @@
-import React, { Fragment, Component } from 'react';
-import { Link } from 'react-router-dom';
+import React, { Fragment} from 'react';
+
 import './style.scss';
-import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
+import { Navbar, Nav } from 'react-bootstrap';
 import { signOut } from '../../services/dataAuthentication';
 
 const NavBar = props => {

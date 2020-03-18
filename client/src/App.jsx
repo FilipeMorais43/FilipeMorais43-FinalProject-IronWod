@@ -14,13 +14,14 @@ import Home from './views/Home';
 import Profile from './views/Profile';
 import ProfileEdit from './views/ProfileEdit';
 import HeroWodSingle from './views/HeroWodSingle';
-import HeroWod from './views/HeroWod';
 import MovementList from './views/MovementList';
 import MovementSingle from './views/MovementSingle';
 import MyWods from './views/MyWods';
 import NewMovement from './views/NewMovement';
+import HeroWod from './views/HeroWod';
 
 import { loadUserInformation } from './services/dataAuthentication';
+import NewWod from './views/NewWod';
 
 class App extends Component {
   constructor() {
@@ -68,12 +69,26 @@ class App extends Component {
             <NavBar user={this.state.user} updateUserInformation={this.updateUserInformation} />
             <Switch>
               <Route path="/" exact component={Home} />
+              <ProtectedRoute
+                exact
+                authorized={this.state.user}
+                path="/mywods"
+                redirect={'/sign-in'}
+                render={props => <MyWods user={this.state.user} {...props} />}
+              />
+                 <ProtectedRoute
+                exact
+                authorized={this.state.user}
+                path="/mywods/createWod"
+                redirect={'/sign-in'}
+                render={props => <NewWod user={this.state.user} {...props} />}
+              />
+              {/* <Route path="/mywods/createWod" exact component={NewWod} /> */}
               <Route path="/herowod" exact component={HeroWod} />
-              <Route path="/herowod/single" component={HeroWodSingle} />
+              <Route path="/herowod/:id" exact component={HeroWodSingle} />
               <Route path="/movement" exact component={MovementList} />
               <Route path="/movement/create" exact component={NewMovement} />
               <Route path="/movement/:id" exact component={MovementSingle} />
-              <Route path="/mywods" exact component={MyWods} />
 
               <ProtectedRoute
                 path="/sign-up"
