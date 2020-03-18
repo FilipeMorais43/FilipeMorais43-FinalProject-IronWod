@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Component } from 'react';
+import './style.scss';
 
 class Profile extends Component {
   render() {

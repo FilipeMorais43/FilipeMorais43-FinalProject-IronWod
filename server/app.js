@@ -15,9 +15,15 @@ const passportConfigure = require('./passport-configuration.js');
 const indexRouter = require('./routes/index');
 const movementRouter = require('./routes/movement');
 const authenticationRouter = require('./routes/authentication');
+const cors = require('cors');
 
 const app = express();
 
+app.use(
+  cors({
+    origin: ['http://localhost:3000']
+  })
+);
 app.use(serveFavicon(join(__dirname, 'public/images', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(express.json());

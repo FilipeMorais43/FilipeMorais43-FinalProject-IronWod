@@ -26,9 +26,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      //quando autenticação feita, mudar loaded para FALSE
       loaded: false,
-      //...
       user: null
     };
     this.updateUserInformation = this.updateUserInformation.bind(this);
@@ -37,7 +35,6 @@ class App extends Component {
   componentDidMount() {
     loadUserInformation()
       .then(user => {
-     
         this.updateUserInformation(user);
         this.setState({
           loaded: true
@@ -48,19 +45,13 @@ class App extends Component {
       });
   }
 
- 
-
   updateUserInformation(user) {
- 
     this.setState({
       user
     });
-
   }
 
   render() {
-
-
     return (
       <div>
         {this.state.loaded && (
