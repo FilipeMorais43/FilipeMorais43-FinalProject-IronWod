@@ -19,14 +19,20 @@ const NavBar = props => {
       <Navbar.Brand href="/">IronWod</Navbar.Brand>
       {(props.user && (
         <Fragment>
-          <Nav.Link href="/profile">
-            <div className="profile__picture">
-              <img src={props.user.picture} alt={props.user.name} />
-            </div>
-            {props.user.name}'s Profile
-          </Nav.Link>
-          <Nav.Link href="mywods"> My Wods</Nav.Link>
-          <button onClick={handleSignOut}>Sign Out</button>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav className="mr-auto"></Nav>
+            <Nav.Link href="/profile">
+              <div className="profile__picture">
+                <img src={props.user.picture} alt={props.user.name} />
+              </div>
+              {props.user.name}'s Profile
+            </Nav.Link>
+            <Nav.Link href="mywods"> My Wods</Nav.Link>
+            <Nav.Link href="/herowod">HeroWod</Nav.Link>
+            <Nav.Link href="/movement">Movements</Nav.Link>
+            <Nav.Link onClick={handleSignOut}>Sign Out</Nav.Link>
+          </Navbar.Collapse>
         </Fragment>
       )) || (
         <Fragment>
