@@ -6,14 +6,13 @@ class NewWod extends Component {
     super();
     this.state = {
       name: '',
-      wod:'',
-      score:'',
-      tips:''
-   
+      wod: '',
+      score: '',
+      tips: ''
     };
 
-    this.addWod=this.addWod.bind(this);
-    this.handleChange= this.handleChange.bind(this);
+    this.addWod = this.addWod.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange = event => {
@@ -27,12 +26,13 @@ class NewWod extends Component {
 
   addWod(event) {
     event.preventDefault();
-    console.log("USER_ID",this.props.user._id)
-    const user = this.props.user._id
-    const {name, wod ,score, tips } = this.state
-    create({name ,wod ,score, tips, user} )
+    console.log('USER_ID', this.props.user._id);
+    const user = this.props.user._id;
+    const { name, wod, score, tips } = this.state;
+    create({ name, wod, score, tips, user })
       .then(result => {
         console.log(result);
+        this.props.history.push('/mywods');
       })
       .catch(error => console.log(error));
   }

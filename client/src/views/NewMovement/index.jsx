@@ -6,14 +6,14 @@ class NewMovement extends Component {
     super();
     this.state = {
       name: '',
-      setup:'',
-      protip:'',
-      description:'',
-      execution:''
+      setup: '',
+      protip: '',
+      description: '',
+      execution: ''
     };
 
-    this.addMovement=this.addMovement.bind(this);
-    this.handleChange= this.handleChange.bind(this);
+    this.addMovement = this.addMovement.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange = event => {
@@ -27,10 +27,11 @@ class NewMovement extends Component {
 
   addMovement(event) {
     event.preventDefault();
-    const {name, setup ,protip, description ,execution} = this.state
-    create({name ,setup ,protip, description ,execution} )
+    const { name, setup, protip, description, execution } = this.state;
+    create({ name, setup, protip, description, execution })
       .then(result => {
         console.log(result);
+        this.props.history.push('/movement');
       })
       .catch(error => console.log(error));
   }
