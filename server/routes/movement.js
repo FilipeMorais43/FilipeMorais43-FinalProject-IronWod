@@ -19,8 +19,8 @@ router.get('/list', async (req, res, next) => {
 //router for create movement
 
 router.post('/create', async (req, res, next) => {
-  const { name, setup, protip, description, execution } = req.body;
-  const newMovement = { name, setup, protip, description,execution };
+  const { name, setup, protip, description, execution , video } = req.body;
+  const newMovement = { name, setup, protip, description,execution , video };
   try {
     const newMovementResult = await Movement.create(newMovement);
     res.json( newMovementResult );

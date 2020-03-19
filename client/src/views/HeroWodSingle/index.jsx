@@ -1,13 +1,46 @@
-import React, { Component } from 'react';
+import React, { Component , Fragment } from 'react';
 
-class TimerSingle extends Component {
+import {single} from '../../services/wod';
+import ResponsivePlayer from '../../components/ReactPlayer/ResponsivePlayer'
+
+
+class WodSingle extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      wod: null
+    };
+   
+  }
+
+  componentDidMount() {
+    this.fetchData();
+  }
+
+  fetchData() {
+    const id = this.props.match.params.id;
+    single(id)
+      .then( wod => {
+        this.setState( {wod} );
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
+
   render() {
+    
     return (
-      <div>
-        <h1>HeroWod Single goes here</h1>
+      <div className="wod__single">
+          {this.state.wod && 
+        <Fragment>
+         <h1>{this.state.wod.name}</h1>
+         <ResponsivePlayer url = {this.state.wod.video} />
+         </Fragment>}
+         
       </div>
     );
   }
 }
 
-export default TimerSingle;
+export default WodSingle;

@@ -2,6 +2,8 @@ import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import { Component } from 'react';
 
+
+
 class Home extends Component {
   render() {
     return (
@@ -13,6 +15,7 @@ class Home extends Component {
         <Link to={'/movement'}>
           <h1>Movement List</h1>
         </Link>
+      
       </Fragment>
     );
   }

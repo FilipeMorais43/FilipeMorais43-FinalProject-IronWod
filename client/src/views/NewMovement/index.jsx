@@ -9,7 +9,8 @@ class NewMovement extends Component {
       setup: '',
       protip: '',
       description: '',
-      execution: ''
+      execution: '',
+      video:''
     };
 
     this.addMovement = this.addMovement.bind(this);
@@ -27,8 +28,8 @@ class NewMovement extends Component {
 
   addMovement(event) {
     event.preventDefault();
-    const { name, setup, protip, description, execution } = this.state;
-    create({ name, setup, protip, description, execution })
+    const { name, setup, protip, description, execution ,video} = this.state;
+    create({ name, setup, protip, description, execution, video })
       .then(result => {
         console.log(result);
         this.props.history.push('/movement');
@@ -84,6 +85,15 @@ class NewMovement extends Component {
           value={this.state.protip}
           onChange={this.handleChange}
           placeholder="Movement protip"
+        />
+        <label htmlFor="video">Video</label>
+        <input
+          type="text"
+          id="video"
+          name="video"
+          value={this.state.video}
+          onChange={this.handleChange}
+          placeholder="Movement video"
         />
 
         <button type="submit">Add New</button>

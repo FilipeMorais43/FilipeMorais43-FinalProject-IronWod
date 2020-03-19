@@ -30,7 +30,8 @@ const create = async (data) => {
     setup : data.setup ,
     protip : data.protip,
     description : data.description,
-    execution : data.execution
+    execution : data.execution,
+    video : data.video
   
   });
   const newMovement = result.data;

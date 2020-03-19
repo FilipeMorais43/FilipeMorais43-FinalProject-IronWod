@@ -36,6 +36,17 @@ router.get('/list', async (req, res, next) => {
     }
   });
 
+  // router for single movement
+router.get('/:id', async (req, res, next) => {
+  const id = req.params.id;
+  try {
+    const wod = await Wod.findById(id);
+    res.json( wod );
+  } catch (error) {
+    next(error);
+  }
+});
+
   module.exports = router;
 
   

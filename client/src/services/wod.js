@@ -42,5 +42,12 @@ const create = async (data) => {
   return newMovement;
 };
 
-  export { list , create, listUser};
+//service para mostrar um movimento
+const single = async id => {
+  const result = await instance.get(`/${id}`);
+  const wod = result.data;
+  return wod;
+};
+
+  export { list , create, listUser , single};
   
