@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 
 import {single} from '../../services/movement';
 import ResponsivePlayer from '../../components/ReactPlayer/ResponsivePlayer'
-import React, { Component } from 'react';
+
 import './style.scss';
 
 
