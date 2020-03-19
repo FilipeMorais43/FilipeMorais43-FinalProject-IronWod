@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import './index.scss';
-import 'bootstrap/dist/css/bootstrap.min.css';
 //comments
 import NavBar from './components/NavBar';
 import ProtectedRoute from './components/ProtectedRoute';
@@ -67,7 +66,7 @@ class App extends Component {
                 redirect={'/sign-in'}
                 render={props => <MyWods user={this.state.user} {...props} />}
               />
-                 <ProtectedRoute
+              <ProtectedRoute
                 exact
                 authorized={this.state.user}
                 path="/mywods/createWod"

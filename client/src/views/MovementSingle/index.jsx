@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import './style.scss';
 
-import {single} from '../../services/movement';
+import { single } from '../../services/movement';
 
 class MovementSingle extends Component {
   constructor(props) {
@@ -8,7 +9,6 @@ class MovementSingle extends Component {
     this.state = {
       movement: null
     };
-   
   }
 
   componentDidMount() {
@@ -18,8 +18,8 @@ class MovementSingle extends Component {
   fetchData() {
     const id = this.props.match.params.id;
     single(id)
-      .then( movement => {
-        this.setState( {movement} );
+      .then(movement => {
+        this.setState({ movement });
       })
       .catch(error => {
         console.log(error);
@@ -27,13 +27,10 @@ class MovementSingle extends Component {
   }
 
   render() {
-    
     return (
       <div className="movement__single">
         {/* {JSON.stringify(this.state,null,2)} */}
-        {this.state.movement && 
-         <h1>{this.state.movement.name}</h1>}
-        
+        {this.state.movement && <h1>{this.state.movement.name}</h1>}
       </div>
     );
   }

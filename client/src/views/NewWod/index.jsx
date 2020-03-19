@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { create } from '../../services/wod';
+import './style.scss';
 
 class NewWod extends Component {
   constructor() {
