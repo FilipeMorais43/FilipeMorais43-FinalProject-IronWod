@@ -20,11 +20,12 @@ const cors = require('cors');
 
 const app = express();
 
-app.use(
+/*app.use(
   cors({
-    origin: ['http://localhost:3000']
+    origin: ['http://localhost:4000']
   })
-);
+);*/
+
 app.use(serveFavicon(join(__dirname, 'public/images', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(express.json());
@@ -51,10 +52,9 @@ app.use(passport.session());
 app.use(bindUserToViewLocals);
 
 app.use('/', indexRouter);
-app.use('/api/wod',wodRouter );
+app.use('/api/wod', wodRouter);
 app.use('/api/authentication', authenticationRouter);
 app.use('/api/movement', movementRouter);
-
 
 // Catch missing routes and forward to error handler
 app.use((req, res, next) => {
