@@ -25,11 +25,14 @@ class MyWods extends Component {
   render() {
     const myWods = this.state.myWods;
     return (
-      <div>
-        <div>
-          <h2>click on buttons to create:</h2>
-          <Link to="/movement/create">Create a Movement</Link>
-          <Link to="/mywods/createWod">Create a Wod</Link>
+      <div className="mywods">
+        <div className="mywods__create">
+          <Link className="mywods__create__movement" to="/movement/create">
+            Create a Movement
+          </Link>
+          <Link className="mywods__create__wod" to="/mywods/createWod">
+            Create a Wod
+          </Link>
         </div>
         <div>
           <h3>Your List of Wods:</h3>

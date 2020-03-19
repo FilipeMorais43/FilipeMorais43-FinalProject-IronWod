@@ -7,15 +7,24 @@ class Profile extends Component {
   render() {
     const user = this.props.user;
     return (
-      <div>
-        <figure className="figure__profile">
+      <div className="profile">
+        <div>
+          <h2>{user.name}</h2>
+          <hr />
+          <span>{user.email}</span>
+          <hr />
+        </div>
+        <figure className="profile__figure">
           <img src={user.picture} alt={user.name} />
         </figure>
-        <div>
-          <h2>Name:{user.name}</h2>
-          <span>Email:{user.email}</span>
+        <hr />
+        <div className="profile_edit__button">
+          <Link to="/profile/edit">
+            <i>
+              <strong>Edit Profile</strong>
+            </i>
+          </Link>
         </div>
-        <Link to="/profile/edit">Edit Profile</Link>
       </div>
     );
   }

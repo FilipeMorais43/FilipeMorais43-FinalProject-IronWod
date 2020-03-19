@@ -57,13 +57,9 @@ class ProfileEdit extends Component {
   render() {
     const user = this.props.user;
     return (
-      <div>
-        <figure className="figure__profile__edit">
-          <img src={user.picture} alt={user.name} />
-        </figure>
-
+      <div className="profile__edit">
         <form onSubmit={this.handleFormSubmission}>
-          <label htmlFor="name">Name</label>
+          <label htmlFor="name">Name:</label>
           <input
             id="name"
             name="name"
@@ -72,7 +68,7 @@ class ProfileEdit extends Component {
             onChange={this.handleInputChange}
             value={this.state.name}
           />
-          <label htmlFor="email">Email</label>
+          <label htmlFor="email">Email:</label>
           <input
             id="email"
             name="email"
@@ -81,7 +77,10 @@ class ProfileEdit extends Component {
             onChange={this.handleInputChange}
             value={this.state.email}
           />
-          <label htmlFor="picture">Profile Picture</label>
+          <figure className="profile__edit__figure">
+            <img src={user.picture} alt={user.name} />
+          </figure>
+          <label htmlFor="picture">Profile Picture:</label>
           <input type="file" id="picture" name="picture" onChange={this.handleFileInputChange} />
           <button>Update Profile</button>
         </form>
