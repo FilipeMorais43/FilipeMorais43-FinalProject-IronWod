@@ -53,13 +53,16 @@ class NewWod extends Component {
           placeholder="Wod name"
         />
         <label htmlFor="wod">Wod</label>
-        <input
+        <textarea rows="7"
           type="textarea"
           id="wod"
           name="wod"
           value={this.state.wod}
           onChange={this.handleChange}
-          placeholder="wod description"
+          placeholder="AMRAP in 20 minutes
+5 Pull-Ups
+10 Push-Ups
+15 Air Squats"
         />
         <label htmlFor="score">Score</label>
         <input

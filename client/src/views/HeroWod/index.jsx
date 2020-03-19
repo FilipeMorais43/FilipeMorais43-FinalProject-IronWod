@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+
 import { list } from '../../services/wod';
 import { Card, Button } from 'react-bootstrap';
 
