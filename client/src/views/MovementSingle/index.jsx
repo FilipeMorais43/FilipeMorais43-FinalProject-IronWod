@@ -2,6 +2,10 @@ import React, { Component, Fragment } from 'react';
 
 import {single} from '../../services/movement';
 import ResponsivePlayer from '../../components/ReactPlayer/ResponsivePlayer'
+import React, { Component } from 'react';
+import './style.scss';
+
+
 
 class MovementSingle extends Component {
   constructor(props) {
@@ -9,7 +13,6 @@ class MovementSingle extends Component {
     this.state = {
       movement: null
     };
-   
   }
 
   componentDidMount() {
@@ -19,8 +22,8 @@ class MovementSingle extends Component {
   fetchData() {
     const id = this.props.match.params.id;
     single(id)
-      .then( movement => {
-        this.setState( {movement} );
+      .then(movement => {
+        this.setState({ movement });
       })
       .catch(error => {
         console.log(error);

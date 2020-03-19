@@ -8,12 +8,12 @@ class Profile extends Component {
     const user = this.props.user;
     return (
       <div>
-        <figure>
+        <figure className="figure__profile">
           <img src={user.picture} alt={user.name} />
         </figure>
         <div>
-          <h1>{user.name}</h1>
-          <span>{user.email}</span>
+          <h2>Name:{user.name}</h2>
+          <span>Email:{user.email}</span>
         </div>
         <Link to="/profile/edit">Edit Profile</Link>
       </div>

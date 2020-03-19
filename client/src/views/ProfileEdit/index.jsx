@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { editUserInformation } from '../../services/dataAuthentication';
+import './style.scss';
 
 class ProfileEdit extends Component {
   constructor(props) {
@@ -57,7 +58,7 @@ class ProfileEdit extends Component {
     const user = this.props.user;
     return (
       <div>
-        <figure>
+        <figure className="figure__profile__edit">
           <img src={user.picture} alt={user.name} />
         </figure>
 

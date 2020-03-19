@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { create } from '../../services/movement';
+import './style.scss';
 
 class NewMovement extends Component {
   constructor() {

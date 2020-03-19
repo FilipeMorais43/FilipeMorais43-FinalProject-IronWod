@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import {list} from  '../../services/movement'
+import { list } from '../../services/movement';
+import './style.scss';
 
 class MovementList extends Component {
   constructor(props) {
@@ -8,7 +9,6 @@ class MovementList extends Component {
     this.state = {
       movements: []
     };
-    
   }
 
   componentDidMount() {
@@ -33,11 +33,10 @@ class MovementList extends Component {
         <div className="movement__list">
           {/* <pre>{JSON.stringify(this.state.movements,null, 2)}</pre> */}
           {this.state.movements.map(movement => (
-             <Link to={`movement/${movement._id}`}  key={movement._id}> 
-            <p>{movement.name}</p>         
-             </Link>
+            <Link to={`movement/${movement._id}`} key={movement._id}>
+              <p>{movement.name}</p>
+            </Link>
           ))}
-     
         </div>
       </div>
     );
