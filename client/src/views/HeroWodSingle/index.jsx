@@ -1,8 +1,7 @@
-import React, { Component , Fragment } from 'react';
+import React, { Component, Fragment } from 'react';
 
-import {single} from '../../services/wod';
-import ResponsivePlayer from '../../components/ReactPlayer/ResponsivePlayer'
-
+import { single } from '../../services/wod';
+import ResponsivePlayer from '../../components/ReactPlayer/ResponsivePlayer';
 
 class WodSingle extends Component {
   constructor(props) {
@@ -10,7 +9,6 @@ class WodSingle extends Component {
     this.state = {
       wod: null
     };
-   
   }
 
   componentDidMount() {
@@ -20,8 +18,8 @@ class WodSingle extends Component {
   fetchData() {
     const id = this.props.match.params.id;
     single(id)
-      .then( wod => {
-        this.setState( {wod} );
+      .then(wod => {
+        this.setState({ wod });
       })
       .catch(error => {
         console.log(error);
@@ -29,15 +27,16 @@ class WodSingle extends Component {
   }
 
   render() {
-    
     return (
       <div className="wod__single">
-          {this.state.wod && 
-        <Fragment>
-         <h1>{this.state.wod.name}</h1>
-         <ResponsivePlayer url = {this.state.wod.video} />
-         </Fragment>}
-         
+        {this.state.wod && (
+          <Fragment>
+            <h1>{this.state.wod.name}</h1>
+            <div className="wod__single__video">
+              <ResponsivePlayer url={this.state.wod.video} />
+            </div>
+          </Fragment>
+        )}
       </div>
     );
   }

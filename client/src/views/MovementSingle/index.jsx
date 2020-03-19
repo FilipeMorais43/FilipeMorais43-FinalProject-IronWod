@@ -1,11 +1,9 @@
 import React, { Component, Fragment } from 'react';
 
-import {single} from '../../services/movement';
-import ResponsivePlayer from '../../components/ReactPlayer/ResponsivePlayer'
+import { single } from '../../services/movement';
+import ResponsivePlayer from '../../components/ReactPlayer/ResponsivePlayer';
 
 import './style.scss';
-
-
 
 class MovementSingle extends Component {
   constructor(props) {
@@ -31,15 +29,17 @@ class MovementSingle extends Component {
   }
 
   render() {
-    console.log(this.state.movement)
+    console.log(this.state.movement);
     return (
       <div className="movement__single">
-        {/* {JSON.stringify(this.state,null,2)} */}
-        {this.state.movement && 
-        <Fragment>
-         <h1>{this.state.movement.name}</h1>
-         <ResponsivePlayer url = {this.state.movement.video} />
-         </Fragment>}
+        {this.state.movement && (
+          <Fragment>
+            <h1>{this.state.movement.name}</h1>
+            <div className="movement__single__video">
+              <ResponsivePlayer url={this.state.movement.video} />
+            </div>
+          </Fragment>
+        )}
       </div>
     );
   }

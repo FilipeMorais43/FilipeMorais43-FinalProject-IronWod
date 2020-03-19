@@ -16,7 +16,6 @@ body {
   margin: 0 auto;
   padding: 0;
   background-image: url('/movimg.jpg');
-  color: white;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
     'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   line-height: 1.5;
@@ -47,13 +46,13 @@ textarea {
 }
 
 button {
-  background-color: hsla(230, 20%, 95%, 1);
+  background-color: lightgrey;
   margin-bottom: 0.5em;
   display: flex;
   padding: 0.5em;
   border: 1px solid hsla(230, 20%, 85%, 1);
   font: inherit;
-  color: inherit;
+  color: black;
   margin-bottom: 1em;
   cursor: pointer;
   &:disabled {
