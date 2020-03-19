@@ -31,6 +31,7 @@ const create = async (data) => {
     protip : data.protip,
     description : data.description,
     execution : data.execution,
+    picture: data.picture,
     video : data.video
   
   });

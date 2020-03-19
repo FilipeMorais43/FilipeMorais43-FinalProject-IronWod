@@ -25,10 +25,15 @@ const schema = new mongoose.Schema({
     trim: true,
     required: true
   },
+  picture:{
+    type:String
+
+  },
   video:{
     type:String,
     trim: true
   }
+
 
 });
 

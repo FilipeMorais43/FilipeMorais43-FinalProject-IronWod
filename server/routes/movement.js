@@ -2,6 +2,7 @@
 
 const { Router } = require('express');
 const router = new Router();
+const uploader = require('./../multer-configure.js'); 
 
 const Movement = require('./../models/movement');
 
@@ -17,10 +18,12 @@ router.get('/list', async (req, res, next) => {
 
 
 //router for create movement
-
-router.post('/create', async (req, res, next) => {
-  const { name, setup, protip, description, execution , video } = req.body;
-  const newMovement = { name, setup, protip, description,execution , video };
+router.post('/create', uploader.single('picture'), async (req, res, next) => {
+  console.log("got there");
+  const { name, setup, protip, description, execution, video } = req.body;
+  let picture;
+  if (req.file) picture = req.file.url;
+  const newMovement = { name, setup, protip, description,execution, picture,video};
   try {
     const newMovementResult = await Movement.create(newMovement);
     res.json( newMovementResult );

@@ -39,7 +39,7 @@ class MyWods extends Component {
           <h3>Your List of Wods:</h3>
           <ul>
             {myWods.map(singleWod => (
-              <Card style={{ width: '18rem' }}>
+              <Card  key={singleWod._id} style={{ width: '18rem' }}>
   <Card.Img variant="top" src="" />
   <Card.Body>
     <Card.Title text = 'primary'>{singleWod.name}</Card.Title>

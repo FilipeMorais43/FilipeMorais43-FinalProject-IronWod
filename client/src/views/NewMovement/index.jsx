@@ -11,11 +11,13 @@ class NewMovement extends Component {
       protip: '',
       description: '',
       execution: '',
+      picture:'',
       video:''
     };
 
     this.addMovement = this.addMovement.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleFileInputChange = this.handleFileInputChange.bind(this)
   }
 
   handleChange = event => {
@@ -27,10 +29,18 @@ class NewMovement extends Component {
     });
   };
 
+  handleFileInputChange(event) {
+    console.dir(event.target);
+    const { name, files } = event.target;
+    this.setState({
+      [name]: files[0]
+    });
+  }
+
   addMovement(event) {
     event.preventDefault();
-    const { name, setup, protip, description, execution ,video} = this.state;
-    create({ name, setup, protip, description, execution, video })
+    const { name, setup, protip, description, execution , picture,video} = this.state;
+    create({ name, setup, protip, description, execution, picture,video })
       .then(result => {
         console.log(result);
         this.props.history.push('/movement');
@@ -86,6 +96,14 @@ class NewMovement extends Component {
           value={this.state.protip}
           onChange={this.handleChange}
           placeholder="Movement protip"
+        />
+        <label htmlFor="picture">Picture</label>
+        <input
+          type="file"
+          id="picture"
+          name="picture"
+          onChange={this.handleFileInputChange}
+        
         />
         <label htmlFor="video">Video</label>
         <input

@@ -34,7 +34,7 @@ class MovementList extends Component {
         <div className="movement__list">
           {/* <pre>{JSON.stringify(this.state.movements,null, 2)}</pre> */}
           {this.state.movements.map(movement => (
-            <Card style={{ width: '18rem' }}>
+            <Card key={movement._id} style={{ width: '18rem' }}>
   <Card.Img variant="top" src="../../../public/images/lunge.png" />
   <Card.Body>
     <Card.Title text = 'primary'>{movement.name}</Card.Title>
