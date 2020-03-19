@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { list } from '../../services/movement';
 import './style.scss';
-import { Card , Button} from 'react-bootstrap';
+import { Card, Button } from 'react-bootstrap';
 
 class MovementList extends Component {
   constructor(props) {
@@ -32,18 +32,19 @@ class MovementList extends Component {
     return (
       <div>
         <div className="movement__list">
-          {/* <pre>{JSON.stringify(this.state.movements,null, 2)}</pre> */}
           {this.state.movements.map(movement => (
-            <Card style={{ width: '18rem' }}>
-  <Card.Img variant="top" src="../../../public/images/lunge.png" />
-  <Card.Body>
-    <Card.Title text = 'primary'>{movement.name}</Card.Title>
- 
-    <Button variant="primary" href ={`movement/${movement._id}`}>See more</Button>
-  </Card.Body>
-</Card>
-          
-           /* <Link to={`movement/${movement._id}`} key={movement._id}>
+            <Card key={movement._id} style={{ width: '18rem' }}>
+              <Card.Img variant="top" src="#" />
+              <Card.Body>
+                <Card.Title text="primary">{movement.name}</Card.Title>
+
+                <Button variant="primary" href={`movement/${movement._id}`}>
+                  See more
+                </Button>
+              </Card.Body>
+            </Card>
+
+            /* <Link to={`movement/${movement._id}`} key={movement._id}>
               <p>{movement.name}</p>
             </Link>*/
           ))}

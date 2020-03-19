@@ -32,6 +32,7 @@ class WodSingle extends Component {
         {this.state.wod && (
           <Fragment>
             <h1>{this.state.wod.name}</h1>
+
             <div className="wod__single__video">
               <ResponsivePlayer url={this.state.wod.video} />
             </div>

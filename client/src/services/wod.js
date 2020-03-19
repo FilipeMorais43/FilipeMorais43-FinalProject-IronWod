@@ -7,37 +7,35 @@ const instance = axios.create({
 
 // create wod list
 const list = async () => {
-    try {
-      const result = await instance.get('/list');
-      const wods = result.data;
-      return wods;
-    } catch (error) {
-      throw error;
-    }
-  };
+  try {
+    const result = await instance.get('/list');
+    const wods = result.data;
+    return wods;
+  } catch (error) {
+    throw error;
+  }
+};
 
-  //create wod list user
-  const listUser = async (userId) => {
-    try {
-      const result = await instance.get(`/list/${userId}`);
-      const wods = result.data;
-      return wods;
-    } catch (error) {
-      throw error;
-    }
-  };
+//create wod list user
+const listUser = async userId => {
+  try {
+    const result = await instance.get(`/list/${userId}`);
+    const wods = result.data;
+    return wods;
+  } catch (error) {
+    throw error;
+  }
+};
 
-
-const create = async (data) => {
-  const result = await instance.post(`/create`, { 
-    name : data.name ,
-    wod : data.wod ,
-    score : data.score,
-    tips : data.tips,
+const create = async data => {
+  const result = await instance.post(`/create`, {
+    name: data.name,
+    wod: data.wod,
+    score: data.score,
+    tips: data.tips,
     video: data.video,
-    user: data.user
-   
-  
+    user: data.user,
+    picture: data.picture
   });
   const newMovement = result.data;
   return newMovement;
@@ -50,5 +48,18 @@ const single = async id => {
   return wod;
 };
 
-  export { list , create, listUser , single};
-  
+//edit do wod
+const edit = async (data, id) => {
+  const form = new FormData();
+  form.append('name', data.name);
+  form.append('wod', data.wod);
+  form.append('score', data.score);
+  form.append('tips', data.tips);
+  form.append('video', data.video);
+  form.append('picture', data.picture);
+  const result = await instance.patch(`/${id}`, form);
+  const user = result.data.user;
+  return user;
+};
+
+export { list, create, listUser, single, edit };

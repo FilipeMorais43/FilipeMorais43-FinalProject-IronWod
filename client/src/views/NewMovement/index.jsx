@@ -11,7 +11,8 @@ class NewMovement extends Component {
       protip: '',
       description: '',
       execution: '',
-      video:''
+      video: '',
+      picture: ''
     };
 
     this.addMovement = this.addMovement.bind(this);
@@ -29,7 +30,7 @@ class NewMovement extends Component {
 
   addMovement(event) {
     event.preventDefault();
-    const { name, setup, protip, description, execution ,video} = this.state;
+    const { name, setup, protip, description, execution, video } = this.state;
     create({ name, setup, protip, description, execution, video })
       .then(result => {
         console.log(result);

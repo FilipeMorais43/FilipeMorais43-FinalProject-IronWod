@@ -24,26 +24,34 @@ const single = async id => {
 };
 
 //service para criar um movimento
-const create = async (data) => {
-  const result = await instance.post(`/create`, { 
-    name : data.name ,
-    setup : data.setup ,
-    protip : data.protip,
-    description : data.description,
-    execution : data.execution,
-    video : data.video
-  
+const create = async data => {
+  const result = await instance.post(`/create`, {
+    name: data.name,
+    setup: data.setup,
+    protip: data.protip,
+    description: data.description,
+    execution: data.execution,
+    video: data.video,
+    picture: data.picture
   });
   const newMovement = result.data;
   return newMovement;
 };
 
-//service para editar um moviment
-const edit = async (id, name) => {
-  const result = await instance.put(`/edit/${id}`, { name });
-  const movement = result.data;
-  return movement;
+const edit = async (data, id) => {
+  const form = new FormData();
+  form.append('name', data.name);
+  form.append('setup', data.setup);
+  form.append('protip', data.protip);
+  form.append('description', data.description);
+  form.append('execution', data.execution);
+  form.append('video', data.video);
+  form.append('picture', data.picture);
+  const result = await instance.patch(`/${id}`, form);
+  const user = result.data.user;
+  return user;
 };
+
 // service para eleminar um moviment
 const remove = async id => {
   const result = await instance.delete(`/${id}`);
@@ -52,5 +60,3 @@ const remove = async id => {
 };
 
 export { list, single, create, edit, remove };
-
-
