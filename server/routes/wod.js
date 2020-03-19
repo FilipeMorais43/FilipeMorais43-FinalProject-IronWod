@@ -26,8 +26,8 @@ router.get('/list', async (req, res, next) => {
   });
 
   router.post('/create', async (req, res, next) => {
-    const { name, wod, score, tips, user } = req.body;
-    const newWod = { name, wod, score, tips, user };
+    const { name, wod, score, tips, user, video } = req.body;
+    const newWod = { name, wod, score, tips, user , video};
     try {
       const newWodResult = await Wod.create(newWod);
       res.json( newWodResult );

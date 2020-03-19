@@ -1,7 +1,7 @@
-
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import {list} from  '../../services/wod'
+import { Card , Button} from 'react-bootstrap';
 
 class HeroWod extends Component {
   constructor(props) {
@@ -34,9 +34,21 @@ class HeroWod extends Component {
       <div>
         <div className="wod__list">
          
-        {wods.map(wod =>  <Link to={`herowod/${wod._id}`}  key={wod._id}> 
-            <p>{wod.name}</p>         
-             </Link>)}
+        {wods.map(wod =>   (
+            <Card style={{ width: '18rem' }}>
+  <Card.Img variant="top" src="../../../public/images/lunge.png" />
+  <Card.Body>
+    <Card.Title text = 'primary'>{wod.name}</Card.Title>
+ 
+    <Button variant="primary" href ={`herowod/${wod._id}`  }>See more</Button>
+  </Card.Body>
+</Card>
+         
+          ))}
+        
+        
+        
+        
      
         </div>
       </div>

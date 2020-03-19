@@ -34,6 +34,7 @@ const create = async (data) => {
     wod : data.wod ,
     score : data.score,
     tips : data.tips,
+    video: data.video,
     user: data.user
    
   

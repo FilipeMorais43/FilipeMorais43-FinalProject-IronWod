@@ -9,7 +9,8 @@ class NewWod extends Component {
       name: '',
       wod: '',
       score: '',
-      tips: ''
+      tips: '',
+      video:''
     };
 
     this.addWod = this.addWod.bind(this);
@@ -29,8 +30,8 @@ class NewWod extends Component {
     event.preventDefault();
     console.log('USER_ID', this.props.user._id);
     const user = this.props.user._id;
-    const { name, wod, score, tips } = this.state;
-    create({ name, wod, score, tips, user })
+    const { name, wod, score, tips , video } = this.state;
+    create({ name, wod, score, tips,video, user })
       .then(result => {
         console.log(result);
         this.props.history.push('/mywods');
@@ -77,6 +78,15 @@ class NewWod extends Component {
           value={this.state.tips}
           onChange={this.handleChange}
           placeholder="Wod tips"
+        />
+        <label htmlFor="video">Video</label>
+        <input
+          type="text"
+          id="video"
+          name="video"
+          value={this.state.video}
+          onChange={this.handleChange}
+          placeholder="Wod video"
         />
         <button type="submit">Add New</button>
       </form>
