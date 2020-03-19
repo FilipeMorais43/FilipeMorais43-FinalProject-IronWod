@@ -18,7 +18,7 @@ import MovementSingle from './views/MovementSingle';
 import MyWods from './views/MyWods';
 import NewMovement from './views/NewMovement';
 import HeroWod from './views/HeroWod';
-
+import SearchResults from './views/SearchResults'
 import { loadUserInformation } from './services/dataAuthentication';
 import NewWod from './views/NewWod';
 
@@ -79,6 +79,7 @@ class App extends Component {
               <Route path="/movement" exact component={MovementList} />
               <Route path="/movement/create" exact component={NewMovement} />
               <Route path="/movement/:id" exact component={MovementSingle} />
+              <Route path="/searchresults" exact component={SearchResults} />
 
               <ProtectedRoute
                 path="/sign-up"
