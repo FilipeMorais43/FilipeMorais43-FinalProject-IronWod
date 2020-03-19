@@ -19,13 +19,16 @@ const schema = new mongoose.Schema({
     type: String,
     trim: true
   },
-  video:{
-    type:String,
+  video: {
+    type: String,
     trim: true
   },
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User'
+  },
+  picture: {
+    type: String
   }
 });
 

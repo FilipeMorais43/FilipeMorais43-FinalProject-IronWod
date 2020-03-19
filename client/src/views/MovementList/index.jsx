@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import { list } from '../../services/movement';
 import './style.scss';
-import { Card , Button} from 'react-bootstrap';
+import { Card, Button } from 'react-bootstrap';
 
 class MovementList extends Component {
   constructor(props) {
@@ -32,7 +32,6 @@ class MovementList extends Component {
     return (
       <div>
         <div className="movement__list">
-          {/* <pre>{JSON.stringify(this.state.movements,null, 2)}</pre> */}
           {this.state.movements.map(movement => (
             <Card key={movement._id} style={{ width: '18rem' }}>
   <Card.Img variant="top" src="../../../public/images/lunge.png" />

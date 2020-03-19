@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import {list} from  '../../services/wod'
-import { Card , Button} from 'react-bootstrap';
+import { list } from '../../services/wod';
+import { Card, Button } from 'react-bootstrap';
 
 class HeroWod extends Component {
   constructor(props) {
@@ -9,7 +9,6 @@ class HeroWod extends Component {
     this.state = {
       wods: []
     };
-    
   }
 
   componentDidMount() {
@@ -29,7 +28,7 @@ class HeroWod extends Component {
   }
 
   render() {
-    const wods = this.state.wods
+    const wods = this.state.wods;
     return (
       <div>
         <div className="wod__list">
@@ -45,17 +44,10 @@ class HeroWod extends Component {
 </Card>
          
           ))}
-        
-        
-        
-        
-     
         </div>
       </div>
     );
   }
 }
 
-
 export default HeroWod;
-
