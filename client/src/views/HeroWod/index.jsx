@@ -56,7 +56,7 @@ class HeroWod extends Component {
                     <Card.Body>
                       <Card.Title text="primary">{wod.name}</Card.Title>
 
-                      <Button variant="primary" href={`movement/${wod._id}`}>
+                      <Button variant="primary" href={`herowod/${wod._id}`}>
                         See more
                       </Button>
                     </Card.Body>

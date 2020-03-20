@@ -61,7 +61,7 @@ class MyWods extends Component {
                       <Card.Body>
                         <Card.Title text="primary">{singleWod.name}</Card.Title>
 
-                        <Button variant="primary" href={`movement/${singleWod._id}`}>
+                        <Button variant="primary" href={`herowod/${singleWod._id}`}>
                           See more
                         </Button>
                       </Card.Body>
