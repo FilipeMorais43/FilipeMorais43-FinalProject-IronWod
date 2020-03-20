@@ -36,13 +36,9 @@ class MyWods extends Component {
     const myWods = this.state.myWods;
     return (
       <div className="mywods">
-        <div className="mywods__create">
-          <Link className="mywods__create__movement" to="/movement/create">
-            Create a Movement
-          </Link>
-          <Link className="mywods__create__wod" to="/mywods/createWod">
-            Create a Wod
-          </Link>
+        <div className="mywods__button">
+          <Button href="/movement/create">Create a Movement</Button>
+          <Button href="/mywods/createWod">Create a Wod</Button>
         </div>
         <div>
           <Search search={this.searchWod} />

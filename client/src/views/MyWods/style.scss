@@ -10,25 +10,15 @@ h3 {
   justify-content: center;
 }
 
-.mywods__create {
+.mywods__button {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  margin: 2em;
-}
-.mywods__create__movement {
-  border: 0.5px solid white;
-  background-color: blue;
-  margin-right: 20px;
-  padding: 0.3em;
-}
-.mywods__create__wod {
-  border: 0.5px solid white;
-  background-color: red;
-  padding: 0.3em;
-  width: 45%;
+  justify-content: space-around;
   align-items: center;
+  margin-top: 2em;
+  margin-bottom: 2em;
 }
+
 .my__wods__list {
   margin: 0 auto;
   margin-top: 2em;
