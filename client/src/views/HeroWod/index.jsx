@@ -2,17 +2,27 @@ import React, { Component } from 'react';
 
 import { list } from '../../services/wod';
 import { Card, Button } from 'react-bootstrap';
+import Search from '../../components/SearchBox'
 
 class HeroWod extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      wods: []
+      wods: [],
+      search:''
     };
+    this.searchWod= this.searchWod.bind(this)
   }
 
   componentDidMount() {
     this.fetchData();
+  }
+
+  searchWod(word) {
+    this.setState({
+      search: word
+    });
+    
   }
 
   fetchData() {
@@ -31,19 +41,29 @@ class HeroWod extends Component {
     const wods = this.state.wods;
     return (
       <div>
+      <Search search={this.searchWod} />
         <div className="wod__list">
          
-        {wods.map(wod =>   (
-            <Card key= {wod._id} style={{ width: '18rem' }}>
+        {wods.map(wod => {
+            if( wod.name.includes(this.state.search)){
+              return (
+            <Card key={wod._id} style={{ width: '18rem' }}>
+            
   <Card.Img variant="top" src={wod.picture} />
   <Card.Body>
     <Card.Title text = 'primary'>{wod.name}</Card.Title>
  
-    <Button variant="primary" href ={`herowod/${wod._id}`  }>See more</Button>
+    <Button variant="primary" href ={`movement/${wod._id}`}>See more</Button>
   </Card.Body>
 </Card>
-         
-          ))}
+
+              )
+            }
+          
+           /* <Link to={`movement/${movement._id}`} key={movement._id}>
+              <p>{movement.name}</p>
+            </Link>*/
+          })}
         </div>
       </div>
     );

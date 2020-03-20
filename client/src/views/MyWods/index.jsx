@@ -3,14 +3,17 @@ import { Link } from 'react-router-dom';
 import { Component } from 'react';
 import { listUser } from './../../services/wod';
 import { Card , Button} from 'react-bootstrap';
+import Search from '../../components/SearchBox'
 import './style.scss';
 
 class MyWods extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      myWods: []
+      myWods: [],
+      search:''
     };
+    this.searchWod= this.searchWod.bind(this)
   }
 
   async componentDidMount() {
@@ -23,6 +26,12 @@ class MyWods extends Component {
       console.log(error);
     }
   }
+  searchWod(word) {
+    this.setState({
+      search: word
+    });
+  }
+    
   render() {
     const myWods = this.state.myWods;
     return (
@@ -36,23 +45,34 @@ class MyWods extends Component {
           </Link>
         </div>
         <div>
+        <Search search={this.searchWod} />
           <h3>Your List of Wods:</h3>
-          <ul>
-            {myWods.map(singleWod => (
-              <Card  key={singleWod._id} style={{ width: '18rem' }}>
+        <div>
+        {myWods.map(singleWod => {
+            if( singleWod.name.includes(this.state.search)){
+              return (
+            <Card key={singleWod._id} style={{ width: '18rem' }}>
+            
   <Card.Img variant="top" src={singleWod.picture} />
   <Card.Body>
     <Card.Title text = 'primary'>{singleWod.name}</Card.Title>
  
-    <Button variant="primary" href ={`herowod/${singleWod._id}`  }>See more</Button>
+    <Button variant="primary" href ={`movement/${singleWod._id}`}>See more</Button>
   </Card.Body>
 </Card>
-         
-          ))}
-          </ul>
+
+              )
+            }
+          
+           /* <Link to={`movement/${movement._id}`} key={movement._id}>
+              <p>{movement.name}</p>
+            </Link>*/
+          })}
+         </div>
         </div>
       </div>
     );
+          
   }
 }
 

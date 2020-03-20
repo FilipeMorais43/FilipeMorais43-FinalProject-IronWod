@@ -1,15 +1,12 @@
-import React, { Component } from 'react'
+/*{wods.map(wod =>   (
+    <Card key= {wod._id} style={{ width: '18rem' }}>
+<Card.Img variant="top" src={wod.picture} />
+<Card.Body>
+<Card.Title text = 'primary'>{wod.name}</Card.Title>
 
- class SearchResults extends Component {
-
-
-    render() {
-        return (
-            <div>
-                <h1>Search Results</h1>
-            </div>
-        )
-    }
-}
-
-export default SearchResults;
+<Button variant="primary" href ={`herowod/${wod._id}`  }>See more</Button>
+</Card.Body>
+</Card>
+ 
+  ))}
+  */
