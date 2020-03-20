@@ -37,8 +37,12 @@ class MyWods extends Component {
     return (
       <div className="mywods">
         <div className="mywods__button">
-          <Button href="/movement/create">Create a Movement</Button>
-          <Button href="/mywods/createWod">Create a Wod</Button>
+          <Button variant="dark" href="/movement/create">
+            Create a Movement
+          </Button>
+          <Button variant="dark" href="/mywods/createWod">
+            Create a Wod
+          </Button>
         </div>
         <div>
           <Search search={this.searchWod} />
@@ -57,7 +61,7 @@ class MyWods extends Component {
                       <Card.Body>
                         <Card.Title text="primary">{singleWod.name}</Card.Title>
 
-                        <Button variant="primary" href={`herowod/${singleWod._id}`}>
+                        <Button variant="dark" border="dark" href={`herowod/${singleWod._id}`}>
                           See more
                         </Button>
                       </Card.Body>

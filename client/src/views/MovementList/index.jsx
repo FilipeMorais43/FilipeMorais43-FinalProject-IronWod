@@ -56,7 +56,7 @@ class MovementList extends Component {
                     <Card.Body>
                       <Card.Title text="primary">{movement.name}</Card.Title>
 
-                      <Button variant="primary" href={`movement/${movement._id}`}>
+                      <Button variant="dark" border="dark" href={`movement/${movement._id}`}>
                         See more
                       </Button>
                     </Card.Body>
