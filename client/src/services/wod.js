@@ -30,9 +30,9 @@ const listUser = async userId => {
 const create = async data => {
   const form = new FormData()
   form.append('name', data.name)
-  form.append('wod', data.setup)
-  form.append('score', data.protip)
-  form.append('tips', data.description)
+  form.append('wod', data.wod)
+  form.append('score', data.score)
+  form.append('tips', data.tips)
   form.append('picture', data.picture)
   form.append('video', data.video)
   form.append('user' ,data.user)

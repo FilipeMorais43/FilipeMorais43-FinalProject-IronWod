@@ -19,12 +19,13 @@ class HeroWod extends Component {
     this.fetchData();
   }
 
+
   searchWod(word) {
     this.setState({
       search: word
     });
-  }
 
+  }
   fetchData() {
     list()
       .then(wods => {

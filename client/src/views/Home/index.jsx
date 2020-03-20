@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Component } from 'react';
 import './style.scss';
-import Background from '../../assets/meghan-holmes-buWcS7G1_28-unsplash.jpg';
+
 
 class Home extends Component {
   constructor() {

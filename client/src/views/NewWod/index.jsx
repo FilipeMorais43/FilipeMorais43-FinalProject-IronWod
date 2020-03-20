@@ -42,7 +42,7 @@ class NewWod extends Component {
     console.log('USER_ID', this.props.user._id);
     const user = this.props.user._id;
     const { name, wod, score, tips ,picture, video } = this.state;
-    create({ name, wod, score, tips,picture,video, user })
+    create({ name, wod, score, tips, picture,video, user })
       .then(result => {
         console.log(result);
         this.props.history.push('/mywods');

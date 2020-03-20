@@ -40,8 +40,8 @@ class MovementSingle extends Component {
               </h4>
               <p> {this.state.movement.description}</p>
               <h4>
-                {' '}
-                <strong>Set-up</strong>{' '}
+            
+                <strong>Set-up</strong>
               </h4>
               <p> {this.state.movement.setup}</p>
               <h4>
