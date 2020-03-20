@@ -13,7 +13,7 @@ const storage = multerStorageCloudinary({
   cloudinary,
   folder: 'hackit',
   // resource_type: 'raw'
-  allowedFormats: ['jpg', 'png', 'gif'],
+  allowedFormats: ['jpg', 'png', 'gif', 'jpeg'],
   transformation: [{ width: 1024, crop: 'limit' }]
 });
 

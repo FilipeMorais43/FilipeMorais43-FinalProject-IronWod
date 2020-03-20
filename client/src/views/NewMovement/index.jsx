@@ -32,6 +32,7 @@ class NewMovement extends Component {
   handleFileInputChange(event) {
     console.dir(event.target);
     const { name, files } = event.target;
+    console.log(name, files)
     this.setState({
       [name]: files[0]
     });
@@ -39,7 +40,8 @@ class NewMovement extends Component {
 
   addMovement(event) {
     event.preventDefault();
-    const { name, setup, protip, description, execution , picture,video} = this.state;
+    const { name, setup, protip, description, execution, picture,video} = this.state;
+    console.log(picture)
     create({ name, setup, protip, description, execution, picture,video })
       .then(result => {
         console.log(result);

@@ -25,16 +25,19 @@ const single = async id => {
 
 //service para criar um movimento
 const create = async (data) => {
-  const result = await instance.post(`/create`, { 
-    name : data.name ,
-    setup : data.setup ,
-    protip : data.protip,
-    description : data.description,
-    execution : data.execution,
-    picture: data.picture,
-    video : data.video
-  
-  });
+  //console.log(data)
+  const form = new FormData()
+  form.append('name', data.name)
+  form.append('setup', data.setup)
+  form.append('protip', data.protip)
+  form.append('description', data.description)
+  form.append('execution', data.execution)
+  form.append('picture', data.picture)
+  form.append('video', data.video)
+
+
+  const result = await instance.post(`/create`, form );
+  //console.log(result)
   const newMovement = result.data;
   return newMovement;
 };

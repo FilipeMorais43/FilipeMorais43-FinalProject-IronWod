@@ -19,7 +19,8 @@ router.get('/list', async (req, res, next) => {
 
 //router for create movement
 router.post('/create', uploader.single('picture'), async (req, res, next) => {
-  console.log("got there");
+ // console.log("got there");
+ // console.log(req.body)
   const { name, setup, protip, description, execution, video } = req.body;
   let picture;
   if (req.file) picture = req.file.url;
@@ -28,6 +29,7 @@ router.post('/create', uploader.single('picture'), async (req, res, next) => {
     const newMovementResult = await Movement.create(newMovement);
     res.json( newMovementResult );
   } catch (error) {
+   // console.log(error)
     next(error);
   }
 });

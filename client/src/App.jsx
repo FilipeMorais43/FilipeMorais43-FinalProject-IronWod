@@ -74,8 +74,8 @@ class App extends Component {
                 render={props => <NewWod user={this.state.user} {...props} />}
               />
               {/* <Route path="/mywods/createWod" exact component={NewWod} /> */}
-              <Route path="/herowod" exact component={HeroWod} />
               <Route path="/herowod/:id" exact component={HeroWodSingle} />
+              <Route path="/herowod" exact component={HeroWod} />
               <Route path="/movement" exact component={MovementList} />
               <Route path="/movement/create" exact component={NewMovement} />
               <Route path="/movement/:id" exact component={MovementSingle} />

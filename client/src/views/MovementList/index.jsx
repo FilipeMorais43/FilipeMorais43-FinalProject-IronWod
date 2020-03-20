@@ -34,7 +34,7 @@ class MovementList extends Component {
         <div className="movement__list">
           {this.state.movements.map(movement => (
             <Card key={movement._id} style={{ width: '18rem' }}>
-  <Card.Img variant="top" src="../../../public/images/lunge.png" />
+  <Card.Img variant="top" src={movement.picture} />
   <Card.Body>
     <Card.Title text = 'primary'>{movement.name}</Card.Title>
  
