@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './style.scss';
 
 import { list } from '../../services/wod';
 import { Card, Button } from 'react-bootstrap';
@@ -49,7 +50,7 @@ class HeroWod extends Component {
               return (
             <Card key={wod._id} style={{ width: '18rem' }}>
             
-  <Card.Img variant="top" src={wod.picture} />
+  <Card.Img variant="top" src={wod.picture}  style={{ maxHeight: '12em', objectFit: 'fill' }}/>
   <Card.Body>
     <Card.Title text = 'primary'>{wod.name}</Card.Title>
  

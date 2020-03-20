@@ -53,7 +53,7 @@ class MyWods extends Component {
               return (
             <Card key={singleWod._id} style={{ width: '18rem' }}>
             
-  <Card.Img variant="top" src={singleWod.picture} />
+  <Card.Img variant="top" src={singleWod.picture} style={{ maxHeight: '12em', objectFit: 'fill' }} />
   <Card.Body>
     <Card.Title text = 'primary'>{singleWod.name}</Card.Title>
  

@@ -1,4 +1,12 @@
 .movement__list {
+  margin: 0 auto;
+  margin-top: 2em;
+  padding: 0 1em;
   display: flex;
-  flex-wrap: wrap-reverse;
+  flex-wrap: wrap;
+}
+
+.movement__card {
+  width: 13rem;
+  margin-right: 20px;
 }
