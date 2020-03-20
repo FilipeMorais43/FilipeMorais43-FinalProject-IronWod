@@ -1,6 +1,7 @@
 .wod__single {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   margin-bottom: 1em;
   margin: 0 auto;
@@ -14,7 +15,6 @@
   margin-bottom: 2em;
   margin-top: 3em;
 }
-
 .wod__single__video {
   width: 50%;
   height: 50%;

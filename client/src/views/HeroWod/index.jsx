@@ -3,16 +3,16 @@ import './style.scss';
 
 import { list } from '../../services/wod';
 import { Card, Button } from 'react-bootstrap';
-import Search from '../../components/SearchBox'
+import Search from '../../components/SearchBox';
 
 class HeroWod extends Component {
   constructor(props) {
     super(props);
     this.state = {
       wods: [],
-      search:''
+      search: ''
     };
-    this.searchWod= this.searchWod.bind(this)
+    this.searchWod = this.searchWod.bind(this);
   }
 
   componentDidMount() {
@@ -23,7 +23,6 @@ class HeroWod extends Component {
     this.setState({
       search: word
     });
-    
   }
 
   fetchData() {
@@ -42,26 +41,31 @@ class HeroWod extends Component {
     const wods = this.state.wods;
     return (
       <div>
-      <Search search={this.searchWod} />
+        <Search search={this.searchWod} />
         <div className="wod__list">
-         
-        {wods.map(wod => {
-            if( wod.name.includes(this.state.search)){
+          {wods.map(wod => {
+            if (wod.name.includes(this.state.search)) {
               return (
-            <Card key={wod._id} style={{ width: '18rem' }}>
-            
-  <Card.Img variant="top" src={wod.picture}  style={{ maxHeight: '12em', objectFit: 'fill' }}/>
-  <Card.Body>
-    <Card.Title text = 'primary'>{wod.name}</Card.Title>
- 
-    <Button variant="primary" href ={`movement/${wod._id}`}>See more</Button>
-  </Card.Body>
-</Card>
+                <div className="wod__card">
+                  <Card key={wod._id} style={{ maxHeight: '18em', width: '18em' }}>
+                    <Card.Img
+                      variant="top"
+                      src={wod.picture}
+                      style={{ maxHeight: '12em', objectFit: 'fill' }}
+                    />
+                    <Card.Body>
+                      <Card.Title text="primary">{wod.name}</Card.Title>
 
-              )
+                      <Button variant="primary" href={`movement/${wod._id}`}>
+                        See more
+                      </Button>
+                    </Card.Body>
+                  </Card>
+                </div>
+              );
             }
-          
-           /* <Link to={`movement/${movement._id}`} key={movement._id}>
+
+            /* <Link to={`movement/${movement._id}`} key={movement._id}>
               <p>{movement.name}</p>
             </Link>*/
           })}

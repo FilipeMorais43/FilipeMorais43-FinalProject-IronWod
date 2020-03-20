@@ -3,14 +3,20 @@
   margin-top: 2em;
   padding: 0 1em;
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap-reverse;
   flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: flex-start;
-  align-content: center;
+  @media only screen and (max-width: 375px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .wod__card {
-  width: 13rem;
-  margin: 20px;
+  margin: 50px;
+  @media only screen and (max-width: 375px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }

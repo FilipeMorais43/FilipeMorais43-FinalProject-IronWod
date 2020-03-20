@@ -9,19 +9,19 @@ h3 {
   display: flex;
   justify-content: center;
 }
+
 .mywods__create {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin: 2em;
 }
-
 .mywods__create__movement {
   border: 0.5px solid white;
   background-color: blue;
+  margin-right: 20px;
   padding: 0.3em;
 }
-
 .mywods__create__wod {
   border: 0.5px solid white;
   background-color: red;
@@ -29,15 +29,24 @@ h3 {
   width: 45%;
   align-items: center;
 }
-ul {
+.my__wods__list {
   margin: 0 auto;
   margin-top: 2em;
   padding: 0 1em;
   display: flex;
   flex-wrap: wrap;
+  @media only screen and (max-width: 375px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .mywods__card {
-  width: 13rem;
-  margin: 20px;
+  margin: 50px;
+  @media only screen and (max-width: 375px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
