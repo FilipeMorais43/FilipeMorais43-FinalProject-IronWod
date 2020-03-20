@@ -2,6 +2,7 @@
 
 const { Router } = require('express');
 const router = new Router();
+const uploader = require('./../multer-configure.js'); 
 
 const Wod = require('./../models/wod');
 
@@ -25,9 +26,11 @@ router.get('/list', async (req, res, next) => {
     }
   });
 
-  router.post('/create', async (req, res, next) => {
+  router.post('/create', uploader.single('picture'), async (req, res, next) => {
     const { name, wod, score, tips, user, video } = req.body;
-    const newWod = { name, wod, score, tips, user , video};
+    let picture;
+    if (req.file) picture = req.file.url;
+    const newWod = { name, wod, score, tips, user,picture , video};
     try {
       const newWodResult = await Wod.create(newWod);
       res.json( newWodResult );

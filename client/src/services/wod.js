@@ -28,15 +28,17 @@ const listUser = async userId => {
 };
 
 const create = async data => {
-  const result = await instance.post(`/create`, {
-    name: data.name,
-    wod: data.wod,
-    score: data.score,
-    tips: data.tips,
-    video: data.video,
-    user: data.user,
-    picture: data.picture
-  });
+  const form = new FormData()
+  form.append('name', data.name)
+  form.append('wod', data.setup)
+  form.append('score', data.protip)
+  form.append('tips', data.description)
+  form.append('picture', data.picture)
+  form.append('video', data.video)
+  form.append('user' ,data.user)
+
+
+  const result = await instance.post(`/create`, form);
   const newMovement = result.data;
   return newMovement;
 };

@@ -27,7 +27,6 @@ const schema = new mongoose.Schema({
   },
   picture:{
     type:String
-
   },
   video:{
     type:String,

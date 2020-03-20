@@ -35,7 +35,7 @@ class HeroWod extends Component {
          
         {wods.map(wod =>   (
             <Card key= {wod._id} style={{ width: '18rem' }}>
-  <Card.Img variant="top" src="../../../public/images/lunge.png" />
+  <Card.Img variant="top" src={wod.picture} />
   <Card.Body>
     <Card.Title text = 'primary'>{wod.name}</Card.Title>
  

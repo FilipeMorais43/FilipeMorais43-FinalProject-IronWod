@@ -10,11 +10,13 @@ class NewWod extends Component {
       wod: '',
       score: '',
       tips: '',
+      picture:'',
       video:''
     };
 
     this.addWod = this.addWod.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleFileInputChange = this.handleFileInputChange.bind(this)
   }
 
   handleChange = event => {
@@ -26,12 +28,21 @@ class NewWod extends Component {
     });
   };
 
+  handleFileInputChange(event) {
+    console.dir(event.target);
+    const { name, files } = event.target;
+    console.log(name, files)
+    this.setState({
+      [name]: files[0]
+    });
+  }
+
   addWod(event) {
     event.preventDefault();
     console.log('USER_ID', this.props.user._id);
     const user = this.props.user._id;
-    const { name, wod, score, tips , video } = this.state;
-    create({ name, wod, score, tips,video, user })
+    const { name, wod, score, tips ,picture, video } = this.state;
+    create({ name, wod, score, tips,picture,video, user })
       .then(result => {
         console.log(result);
         this.props.history.push('/mywods');
@@ -81,6 +92,14 @@ class NewWod extends Component {
           value={this.state.tips}
           onChange={this.handleChange}
           placeholder="Wod tips"
+        />
+            <label htmlFor="picture">Picture</label>
+        <input
+          type="file"
+          id="picture"
+          name="picture"
+          onChange={this.handleFileInputChange}
+        
         />
         <label htmlFor="video">Video</label>
         <input
