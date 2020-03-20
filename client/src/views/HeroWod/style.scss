@@ -1,4 +1,16 @@
 .wod__list {
+  margin: 0 auto;
+  margin-top: 2em;
+  padding: 0 1em;
   display: flex;
-  flex-wrap: wrap-reverse;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: center;
+}
+
+.wod__card {
+  width: 13rem;
+  margin: 20px;
 }

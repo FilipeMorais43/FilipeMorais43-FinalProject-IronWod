@@ -1,9 +1,10 @@
 .wod__single {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   margin-bottom: 1em;
+  margin: 0 auto;
+  padding: 0 1em;
 }
 
 .wod__single__text {

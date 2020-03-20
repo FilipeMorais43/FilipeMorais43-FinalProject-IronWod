@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Component } from 'react';
 import { listUser } from './../../services/wod';
-import { Card , Button} from 'react-bootstrap';
+import { Card, Button } from 'react-bootstrap';
 import './style.scss';
 
 class MyWods extends Component {
@@ -39,16 +39,23 @@ class MyWods extends Component {
           <h3>Your List of Wods:</h3>
           <ul>
             {myWods.map(singleWod => (
-              <Card  key={singleWod._id} style={{ width: '18rem' }}>
-  <Card.Img variant="top" src={singleWod.picture} />
-  <Card.Body>
-    <Card.Title text = 'primary'>{singleWod.name}</Card.Title>
- 
-    <Button variant="primary" href ={`herowod/${singleWod._id}`  }>See more</Button>
-  </Card.Body>
-</Card>
-         
-          ))}
+              <div className="mywods__card">
+                <Card key={singleWod._id} style={{ maxHeight: '18em', minHeight: '18em' }}>
+                  <Card.Img
+                    variant="top"
+                    src={singleWod.picture}
+                    style={{ maxHeight: '12em', objectFit: 'fill' }}
+                  />
+                  <Card.Body>
+                    <Card.Title text="primary">{singleWod.name}</Card.Title>
+
+                    <Button variant="primary" href={`herowod/${singleWod._id}`}>
+                      See more
+                    </Button>
+                  </Card.Body>
+                </Card>
+              </div>
+            ))}
           </ul>
         </div>
       </div>
