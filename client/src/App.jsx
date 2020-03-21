@@ -18,7 +18,6 @@ import MovementSingle from './views/MovementSingle';
 import MyWods from './views/MyWods';
 import NewMovement from './views/NewMovement';
 import HeroWod from './views/HeroWod';
-import Particles from 'react-particles-js';
 import { loadUserInformation } from './services/dataAuthentication';
 import NewWod from './views/NewWod';
 
@@ -54,7 +53,6 @@ class App extends Component {
   render() {
     return (
       <div>
-  
         {this.state.loaded && (
           <BrowserRouter>
             <NavBar user={this.state.user} updateUserInformation={this.updateUserInformation} />
@@ -80,7 +78,6 @@ class App extends Component {
               <Route path="/movement" exact component={MovementList} />
               <Route path="/movement/create" exact component={NewMovement} />
               <Route path="/movement/:id" exact component={MovementSingle} />
-             
 
               <ProtectedRoute
                 path="/sign-up"
