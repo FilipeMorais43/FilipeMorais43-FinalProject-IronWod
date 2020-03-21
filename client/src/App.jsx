@@ -18,7 +18,7 @@ import MovementSingle from './views/MovementSingle';
 import MyWods from './views/MyWods';
 import NewMovement from './views/NewMovement';
 import HeroWod from './views/HeroWod';
-import Particles from 'react-particles-js';
+
 import { loadUserInformation } from './services/dataAuthentication';
 import NewWod from './views/NewWod';
 
@@ -121,6 +121,7 @@ class App extends Component {
             </Switch>
           </BrowserRouter>
         )}
+ 
       </div>
     );
   }

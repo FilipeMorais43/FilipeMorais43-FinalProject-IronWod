@@ -1,5 +1,5 @@
 import React from 'react';
-import Particles from 'react-particles-js';
+
 import { Component } from 'react';
 import './style.scss';
 
