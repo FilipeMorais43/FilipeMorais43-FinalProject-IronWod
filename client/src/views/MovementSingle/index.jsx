@@ -33,14 +33,13 @@ class MovementSingle extends Component {
       <div className="movement__single">
         {this.state.movement && (
           <Fragment>
-            <h1>{this.state.movement.name}</h1>
             <section className="movement__single__text">
+              <h1>{this.state.movement.name}</h1>
               <h4>
                 <strong>Description</strong>
               </h4>
               <p> {this.state.movement.description}</p>
               <h4>
-            
                 <strong>Set-up</strong>
               </h4>
               <p> {this.state.movement.setup}</p>

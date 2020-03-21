@@ -32,13 +32,12 @@ class WodSingle extends Component {
       <div className="wod__single">
         {this.state.wod && (
           <Fragment>
-            <h1>{this.state.wod.name}</h1>
-            <br />
-            <section className="wod__single__text ">
+            <section className="wod__single__text">
+              <h1>{this.state.wod.name}</h1>
               <h4>
                 <strong>WOD:</strong>
               </h4>
-              <p style={{ maxWidth: '70vw' }}> {this.state.wod.wod}</p>
+              <p> {this.state.wod.wod}</p>
               <h4>
                 <strong>Score:</strong>
               </h4>
