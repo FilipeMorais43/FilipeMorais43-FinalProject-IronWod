@@ -47,7 +47,7 @@ class MovementList extends Component {
             if (movement.name.includes(this.state.search)) {
               return (
                 <div className="movement__card">
-                  <Card key={movement._id} style={{ maxHeight: '18em', width: '18em' }}>
+                  <Card  style={{ maxHeight: '18em', width: '18em' }} key={movement._id}>
                     <Card.Img
                       variant="top"
                       src={movement.picture}
