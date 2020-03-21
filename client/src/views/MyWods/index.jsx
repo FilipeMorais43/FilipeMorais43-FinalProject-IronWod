@@ -35,44 +35,46 @@ class MyWods extends Component {
   render() {
     const myWods = this.state.myWods;
     return (
-      <div className="mywods">
-        <div className="mywods__button">
-          <Button variant="dark" href="/movement/create">
-            Create a Movement
-          </Button>
-          <Button variant="dark" href="/mywods/createWod">
-            Create a Wod
-          </Button>
-        </div>
-        <div>
-          <Search search={this.searchWod} />
-          <h3>Your List of Wods:</h3>
-          <div className="my__wods__list">
-            {myWods.map(singleWod => {
-              if (singleWod.name.includes(this.state.search)) {
-                return (
-                  <div className="mywods__card">
-                    <Card key={singleWod._id} style={{ maxHeight: '18em', width: '18em' }}>
-                      <Card.Img
-                        variant="top"
-                        src={singleWod.picture}
-                        style={{ maxHeight: '12em', objectFit: 'fill' }}
-                      />
-                      <Card.Body>
-                        <Card.Title text="primary">{singleWod.name}</Card.Title>
- <Button variant="dark" border="dark" href={`herowod/${singleWod._id}`}>
-                          See more
-                        </Button>
-                      </Card.Body>
-                    </Card>
-                  </div>
-                );
-              }
+      <div>
+        <Search search={this.searchWod} />
+        <div className="mywods">
+          <div className="mywods__button">
+            <Button variant="dark" href="/movement/create">
+              Create a Movement
+            </Button>
+            <Button variant="dark" href="/mywods/createWod">
+              Create a Wod
+            </Button>
+          </div>
+          <div>
+            <h3>Your List of Wods:</h3>
+            <div className="my__wods__list">
+              {myWods.map(singleWod => {
+                if (singleWod.name.includes(this.state.search)) {
+                  return (
+                    <div className="mywods__card">
+                      <Card key={singleWod._id} style={{ maxHeight: '18em', width: '18em' }}>
+                        <Card.Img
+                          variant="top"
+                          src={singleWod.picture}
+                          style={{ maxHeight: '12em', objectFit: 'fill' }}
+                        />
+                        <Card.Body>
+                          <Card.Title text="primary">{singleWod.name}</Card.Title>
+                          <Button variant="dark" border="dark" href={`herowod/${singleWod._id}`}>
+                            See more
+                          </Button>
+                        </Card.Body>
+                      </Card>
+                    </div>
+                  );
+                }
 
-              /* <Link to={`movement/${movement._id}`} key={movement._id}>
+                /* <Link to={`movement/${movement._id}`} key={movement._id}>
               <p>{movement.name}</p>
             </Link>*/
-            })}
+              })}
+            </div>
           </div>
         </div>
       </div>
