@@ -45,7 +45,7 @@ class HeroWod extends Component {
         <Search search={this.searchWod} />
         <div className="wod__list">
           {wods.map(wod => {
-            if (wod.name.includes(this.state.search)) {
+            if (wod.name.toLowerCase().includes(this.state.search.toLowerCase())) {
               return (
                 <div className="wod__card">
                   <Card key={wod._id} style={{ maxHeight: '18em', width: '18em' }}>

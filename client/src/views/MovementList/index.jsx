@@ -44,7 +44,7 @@ class MovementList extends Component {
         <Search search={this.searchMovement} />
         <div className="movement__list">
           {this.state.movements.map(movement => {
-            if (movement.name.includes(this.state.search)) {
+            if (movement.name.toLowerCase().includes(this.state.search.toLowerCase())) {
               return (
                 <div className="movement__card">
                   <Card  style={{ maxHeight: '18em', width: '18em' }} key={movement._id}>

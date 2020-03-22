@@ -50,7 +50,7 @@ class MyWods extends Component {
             <h3>Your List of Wods:</h3>
             <div className="my__wods__list">
               {myWods.map(singleWod => {
-                if (singleWod.name.includes(this.state.search)) {
+                if (singleWod.name.toLowerCase().includes(this.state.search.toLowerCase())) {
                   return (
                     <div className="mywods__card">
                       <Card key={singleWod._id} style={{ maxHeight: '18em', width: '18em' }}>
