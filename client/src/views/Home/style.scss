@@ -16,13 +16,27 @@
   z-index: -1;
 }
 
-
-h1{
+h1 {
   color: white;
   margin: 0 auto;
 }
 
 .features {
   margin-top: 230px;
-  margin-bottom: 230px
+  margin-bottom: 230px;
+  @media only screen and (max-width: 375px) {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+}
+
+.features__mobile {
+  @media only screen and (max-width: 375px) {
+    margin: 0 auto;
+    margin-top: 1em;
+    padding: 0 1em;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    flex-wrap: wrap;
+  }
 }

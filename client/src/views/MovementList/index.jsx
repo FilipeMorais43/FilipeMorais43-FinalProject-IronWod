@@ -42,11 +42,13 @@ class MovementList extends Component {
     return (
       <div>
         <Search search={this.searchMovement} />
+        <h2>Movements:</h2>
         <div className="movement__list">
           {this.state.movements.map(movement => {
             if (movement.name.toLowerCase().includes(this.state.search.toLowerCase())) {
               return (
                 <div className="movement__card">
+                  <h3>Movements:</h3>
                   <div className="card text-center">
                     <Card style={{ maxHeight: '18em', width: '18em' }} key={movement._id}>
                       <Card.Img

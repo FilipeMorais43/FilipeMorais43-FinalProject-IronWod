@@ -41,6 +41,7 @@ class HeroWod extends Component {
     return (
       <div>
         <Search search={this.searchWod} />
+        <h2>Wods:</h2>
         <div className="wod__list">
           {wods.map(wod => {
             if (wod.name.toLowerCase().includes(this.state.search.toLowerCase())) {
