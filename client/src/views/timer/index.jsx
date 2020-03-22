@@ -51,12 +51,13 @@ const leftPad = (width, n) => {
         <div>
           <TimeElapsed id="timer" timeElapsed={timeElapsed} />
           <div className="buttons">
-          <button onClick={this.toggle}>
+          <button onClick={this.toggle} className="timer__button">
             {isRunning ? 'Stop' : 'Start'}
           </button>
           <button
             onClick={ this.reset}
             disabled={!isRunning && !timeElapsed}
+            className="timer__button"
            >
             {' Reset'}
           </button>
