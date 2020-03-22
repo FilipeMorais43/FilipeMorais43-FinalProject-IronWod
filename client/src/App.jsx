@@ -21,6 +21,7 @@ import HeroWod from './views/HeroWod';
 import { loadUserInformation } from './services/dataAuthentication';
 import NewWod from './views/NewWod';
 
+
 class App extends Component {
   constructor() {
     super();
@@ -116,6 +117,7 @@ class App extends Component {
               <Route path="/error" component={Error} />
               <Redirect to="/error" />
             </Switch>
+      
           </BrowserRouter>
         )}
  

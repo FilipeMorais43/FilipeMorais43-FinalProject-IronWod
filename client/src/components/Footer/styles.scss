@@ -1,0 +1,16 @@
+.footer {
+    padding-top: 21px;
+    display: flex;
+align-content: center;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    color: white
+}
+
+.footer__link {
+  color: white;
+  &:hover {
+    color: #999;
+    text-decoration: none;
+  }
+}
