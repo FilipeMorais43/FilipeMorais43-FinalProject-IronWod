@@ -3,6 +3,8 @@ import './style.scss';
 
 import { single } from '../../services/wod';
 import ResponsivePlayer from '../../components/ReactPlayer/ResponsivePlayer';
+import Stopwatch from '../timer';
+
 
 class WodSingle extends Component {
   constructor(props) {
@@ -47,7 +49,7 @@ class WodSingle extends Component {
               </h4>
               <p> {this.state.wod.tips}</p>
             </section>
-
+          <Stopwatch />
             <div className="wod__single__video">
               <ResponsivePlayer url={this.state.wod.video} />
             </div>
