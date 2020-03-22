@@ -1,6 +1,7 @@
 import React from 'react';
 import { Component } from 'react';
 import './style.scss';
+import CarrouselView from '../Carrousel/index';
 
 
 class Home extends Component {
@@ -12,6 +13,7 @@ class Home extends Component {
   render() {
     return (
       <div className="area">
+      <CarrouselView />
         <ul className="circles">
           <li></li>
           <li></li>

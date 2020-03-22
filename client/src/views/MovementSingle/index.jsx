@@ -2,7 +2,6 @@ import React, { Component, Fragment } from 'react';
 
 import { single } from '../../services/movement';
 import ResponsivePlayer from '../../components/ReactPlayer/ResponsivePlayer';
-
 import './style.scss';
 
 class MovementSingle extends Component {
