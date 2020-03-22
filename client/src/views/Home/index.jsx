@@ -28,6 +28,7 @@ class Home extends Component {
               <Image src={Dumbell} style={{ maxHeight: '5em', width: '5em' , paddingBottom:'1em'}} />
               <h5>Wod Maker</h5>
               <small>Wods too hard?</small>
+              <br />
               <small>Create your own wod</small>
             </Col>
             <Col>
@@ -45,7 +46,7 @@ class Home extends Component {
             <Col>
               <Image src={Time}  style={{ maxHeight: '5em', width: '5em' , paddingBottom:'1em' }}  />
               <h5>Chronometer</h5>
-              <small>Use another app for counting time)</small>
+              <small>Use another app for counting time</small>
               <br />
               <small>No problem each wod has its own timer</small>
  
