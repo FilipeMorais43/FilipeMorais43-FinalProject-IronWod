@@ -50,6 +50,7 @@ const leftPad = (width, n) => {
       return (
         <div>
           <TimeElapsed id="timer" timeElapsed={timeElapsed} />
+          <div className="buttons">
           <button onClick={this.toggle}>
             {isRunning ? 'Stop' : 'Start'}
           </button>
@@ -59,6 +60,7 @@ const leftPad = (width, n) => {
            >
             {' Reset'}
           </button>
+          </div>
           {lapTimes.length > 0 && <LapTimes lapTimes={lapTimes} />}
         </div>
       );

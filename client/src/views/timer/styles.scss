@@ -5,6 +5,10 @@ button {
     padding: 5px 8px;
     width: 50px;
   }
+
+  .buttons{
+      display: flex;
+  }
   
   #timer {
     font-size: 1.45em;
