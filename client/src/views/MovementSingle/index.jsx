@@ -50,11 +50,11 @@ class MovementSingle extends Component {
                 <strong>Pro-tip</strong>
               </h4>
               <p> {this.state.movement.protip}</p>
+              <ResponsivePlayer url={this.state.movement.video} />
             </section>
 
-            <div className="movement__single__video">
-              <ResponsivePlayer url={this.state.movement.video} />
-            </div>
+         
+          
           </Fragment>
         )}
       </div>
