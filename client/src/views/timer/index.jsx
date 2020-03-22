@@ -55,11 +55,11 @@ const leftPad = (width, n) => {
             {isRunning ? 'Stop' : 'Start'}
           </button>
           <button
-            onClick={ this.reset}
+            onClick={this.reset}
             disabled={!isRunning && !timeElapsed}
             className="timer__button"
            >
-            {' Reset'}
+            {'Reset'}
           </button>
           </div>
           {lapTimes.length > 0 && <LapTimes lapTimes={lapTimes} />}
