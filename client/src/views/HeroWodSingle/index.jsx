@@ -48,8 +48,11 @@ class WodSingle extends Component {
                 <strong>Tips:</strong>
               </h4>
               <p> {this.state.wod.tips}</p>
-            </section>
+              <h4>
+                <strong>Timer:</strong>
+              </h4>
           <Stopwatch />
+            </section>
             <div className="wod__single__video">
               <ResponsivePlayer url={this.state.wod.video} />
             </div>
