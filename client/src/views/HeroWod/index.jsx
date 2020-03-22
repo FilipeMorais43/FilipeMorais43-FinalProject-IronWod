@@ -19,12 +19,10 @@ class HeroWod extends Component {
     this.fetchData();
   }
 
-
   searchWod(word) {
     this.setState({
       search: word
     });
-
   }
   fetchData() {
     list()
@@ -48,20 +46,28 @@ class HeroWod extends Component {
             if (wod.name.toLowerCase().includes(this.state.search.toLowerCase())) {
               return (
                 <div className="wod__card">
-                  <Card key={wod._id} style={{ maxHeight: '18em', width: '18em' }}>
-                    <Card.Img
-                      variant="top"
-                      src={wod.picture}
-                      style={{ maxHeight: '12em', objectFit: 'fill' }}
-                    />
-                    <Card.Body>
-                      <Card.Title text="primary">{wod.name}</Card.Title>
+                  <div className="card text-center">
+                    <Card
+                      key={wod._id}
+                      style={{
+                        maxHeight: '18em',
+                        width: '18em'
+                      }}
+                    >
+                      <Card.Img
+                        variant="top"
+                        src={wod.picture}
+                        style={{ maxHeight: '12em', objectFit: 'fill' }}
+                      />
+                      <Card.Body>
+                        <Card.Title text="primary">{wod.name}</Card.Title>
 
-                      <Button variant="dark" border="dark" href={`herowod/${wod._id}`}>
-                        See more
-                      </Button>
-                    </Card.Body>
-                  </Card>
+                        <Button variant="dark" border="dark" href={`herowod/${wod._id}`}>
+                          See more
+                        </Button>
+                      </Card.Body>
+                    </Card>
+                  </div>
                 </div>
               );
             }

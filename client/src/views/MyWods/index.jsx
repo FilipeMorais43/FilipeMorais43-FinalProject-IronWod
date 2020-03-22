@@ -53,19 +53,21 @@ class MyWods extends Component {
                 if (singleWod.name.toLowerCase().includes(this.state.search.toLowerCase())) {
                   return (
                     <div className="mywods__card">
-                      <Card key={singleWod._id} style={{ maxHeight: '18em', width: '18em' }}>
-                        <Card.Img
-                          variant="top"
-                          src={singleWod.picture}
-                          style={{ maxHeight: '12em', objectFit: 'fill' }}
-                        />
-                        <Card.Body>
-                          <Card.Title text="primary">{singleWod.name}</Card.Title>
-                          <Button variant="dark" border="dark" href={`herowod/${singleWod._id}`}>
-                            See more
-                          </Button>
-                        </Card.Body>
-                      </Card>
+                      <div className="card text-center">
+                        <Card key={singleWod._id} style={{ maxHeight: '18em', width: '18em' }}>
+                          <Card.Img
+                            variant="top"
+                            src={singleWod.picture}
+                            style={{ maxHeight: '12em', objectFit: 'fill' }}
+                          />
+                          <Card.Body>
+                            <Card.Title text="primary">{singleWod.name}</Card.Title>
+                            <Button variant="dark" border="dark" href={`herowod/${singleWod._id}`}>
+                              See more
+                            </Button>
+                          </Card.Body>
+                        </Card>
+                      </div>
                     </div>
                   );
                 }

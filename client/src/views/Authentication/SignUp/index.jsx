@@ -42,9 +42,7 @@ class SignUp extends Component {
     return (
       <div className="signup__view">
         <form onSubmit={this.handleFormSubmission}>
-          <label htmlFor="name">
-            <strong>Name</strong>
-          </label>
+          <label htmlFor="name"></label>
           <input
             id="name"
             name="name"
@@ -53,9 +51,7 @@ class SignUp extends Component {
             onChange={this.handleInputChange}
             value={this.state.name}
           />
-          <label htmlFor="email">
-            <strong>Email</strong>
-          </label>
+          <label htmlFor="email"></label>
           <input
             id="email"
             name="email"
@@ -64,9 +60,7 @@ class SignUp extends Component {
             onChange={this.handleInputChange}
             value={this.state.email}
           />
-          <label htmlFor="password">
-            <strong>Password</strong>
-          </label>
+          <label htmlFor="password"></label>
           <input
             id="password"
             name="password"
@@ -76,9 +70,9 @@ class SignUp extends Component {
             value={this.state.password}
           />
           {this.state.password && this.state.password.length < 8 && (
-            <small>Passwords needs to be longer. Please try again!</small>
+            <small>Password needs to be 8 characters long.</small>
           )}
-          <button disabled={this.state.password.length < 5}>Sign Up</button>
+          <button disabled={this.state.password.length < 8}>Sign Up</button>
         </form>
       </div>
     );

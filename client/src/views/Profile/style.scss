@@ -21,20 +21,9 @@
 }
 
 .profile_edit__button {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
-input,
-textarea {
-  display: flex;
-  width: 40%;
-  padding: 0.5em;
-  border: 1px solid hsla(230, 20%, 85%, 1);
-  font: inherit;
-  color: inherit;
-  margin-bottom: 1em;
-}
-
-label {
-  margin-bottom: 0.5em;
+h2 {
+  margin-top: 2em;
 }

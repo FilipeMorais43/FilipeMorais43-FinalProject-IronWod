@@ -47,20 +47,22 @@ class MovementList extends Component {
             if (movement.name.toLowerCase().includes(this.state.search.toLowerCase())) {
               return (
                 <div className="movement__card">
-                  <Card  style={{ maxHeight: '18em', width: '18em' }} key={movement._id}>
-                    <Card.Img
-                      variant="top"
-                      src={movement.picture}
-                      style={{ maxHeight: '12em', objectFit: 'fill' }}
-                    />
-                    <Card.Body>
-                      <Card.Title text="primary">{movement.name}</Card.Title>
+                  <div className="card text-center">
+                    <Card style={{ maxHeight: '18em', width: '18em' }} key={movement._id}>
+                      <Card.Img
+                        variant="top"
+                        src={movement.picture}
+                        style={{ maxHeight: '12em', objectFit: 'fill' }}
+                      />
+                      <Card.Body>
+                        <Card.Title text="primary">{movement.name}</Card.Title>
 
-                      <Button variant="dark" border="dark" href={`movement/${movement._id}`}>
-                        See more
-                      </Button>
-                    </Card.Body>
-                  </Card>
+                        <Button variant="dark" border="dark" href={`movement/${movement._id}`}>
+                          See more
+                        </Button>
+                      </Card.Body>
+                    </Card>
+                  </div>
                 </div>
               );
             }

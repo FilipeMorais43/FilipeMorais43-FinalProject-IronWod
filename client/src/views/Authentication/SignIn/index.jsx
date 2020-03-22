@@ -39,9 +39,7 @@ class SignIn extends Component {
     return (
       <div>
         <form onSubmit={this.handleFormSubmission}>
-          <label htmlFor="email">
-            <strong>Email</strong>
-          </label>
+          <label htmlFor="email"></label>
           <input
             id="email"
             name="email"
@@ -50,9 +48,7 @@ class SignIn extends Component {
             onChange={this.handleInputChange}
             value={this.state.email}
           />
-          <label htmlFor="password">
-            <strong>Password</strong>
-          </label>
+          <label htmlFor="password"></label>
           <input
             id="password"
             name="password"

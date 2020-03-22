@@ -13,10 +13,20 @@ h3 {
 .mywods__button {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   margin-top: 2em;
   margin-bottom: 2em;
+  width: 30%;
+  @media only screen and (max-width: 375px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 1em;
+    width: 30%;
+    height: 200px;
+  }
 }
 
 .my__wods__list {
@@ -34,6 +44,8 @@ h3 {
 
 .mywods__card {
   margin: 50px;
+  box-shadow: 5px 5px 11px 7px darkgrey;
+  border: 1px medium black;
   @media only screen and (max-width: 375px) {
     display: flex;
     flex-direction: column;

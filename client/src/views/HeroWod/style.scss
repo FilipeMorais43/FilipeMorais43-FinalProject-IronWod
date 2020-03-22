@@ -14,6 +14,8 @@
 
 .wod__card {
   margin: 50px;
+  box-shadow: 5px 5px 11px 7px darkgrey;
+  border: 1px medium black;
   @media only screen and (max-width: 375px) {
     display: flex;
     flex-direction: column;

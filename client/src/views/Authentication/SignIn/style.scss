@@ -3,5 +3,16 @@ form {
   flex-direction: column;
   align-items: center;
   margin-bottom: 1em;
-  color: blue;
+  border-radius: 10px;
+  margin-top: 3em;
+}
+
+input {
+  border-radius: 10px;
+}
+
+button {
+  margin-top: 1em;
+  border-radius: 10px;
+  border-color: lightgrey;
 }
