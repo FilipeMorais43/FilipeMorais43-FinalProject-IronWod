@@ -10,7 +10,7 @@ class CarrouselView extends Component {
           <Carousel.Item>
             <img
               className="Carroussel-Img d-block w-100"
-              src="./Carousel/meghan-holmes-buWcS7G1_28-unsplash.jpg"
+              src="./Carousel/image.png"
               alt="First slide"
             />
           </Carousel.Item>
