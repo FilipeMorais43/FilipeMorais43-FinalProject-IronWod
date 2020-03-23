@@ -52,10 +52,12 @@ class WodSingle extends Component {
                 <strong>Timer:</strong>
               </h4>
           <Stopwatch />
-            </section>
-            <div className="wod__single__video">
+            <h4>
+                <strong>Video:</strong>
+              </h4>
               <ResponsivePlayer url={this.state.wod.video} />
-            </div>
+            </section>
+         
           </Fragment>
         )}
       </div>
