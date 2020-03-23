@@ -27,6 +27,7 @@ const app = express();
 );*/
 
 app.use(serveFavicon(join(__dirname, 'public/images', 'favicon.ico')));
+app.use(express.static(join(__dirname, './../client/build')));
 app.use(logger('dev'));
 app.use(express.json());
 app.use(cookieParser());
@@ -55,6 +56,10 @@ app.use('/', indexRouter);
 app.use('/api/wod', wodRouter);
 app.use('/api/authentication', authenticationRouter);
 app.use('/api/movement', movementRouter);
+
+app.get('*', (req, res, next) => {
+  res.sendFile(join(__dirname, './../client/build/index.html'));
+});
 
 // Catch missing routes and forward to error handler
 app.use((req, res, next) => {
