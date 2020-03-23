@@ -10,14 +10,14 @@ class CarrouselView extends Component {
           <Carousel.Item>
             <img
               className="Carroussel-Img d-block w-100"
-              src="./Carousel/image.png"
+              src="./Carousel/Crossfit-Motivation-Videos-1280x720.jpg"
               alt="First slide"
             />
           </Carousel.Item>
           <Carousel.Item>
             <img
               className="Carroussel-Img d-block w-100"
-              src="./Carousel/jonathan-borba-lrQPTQs7nQQ-unsplash.jpg"
+              src="./Carousel/froning-strength1920x1080.jsg"
               alt="Third slide"
             />
           </Carousel.Item>
