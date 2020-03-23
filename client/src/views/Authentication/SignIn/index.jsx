@@ -37,7 +37,7 @@ class SignIn extends Component {
 
   render() {
     return (
-      <div>
+      <div className="signin__view">
         <form onSubmit={this.handleFormSubmission}>
           <label htmlFor="email"></label>
           <input
