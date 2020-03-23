@@ -17,7 +17,7 @@ class CarrouselView extends Component {
           <Carousel.Item>
             <img
               className="Carroussel-Img d-block w-100"
-              src="./Carousel/froning-strength1920x1080.jsg"
+              src="./Carousel/froning-strength1920x1080.jpg"
               alt="Third slide"
             />
           </Carousel.Item>
