@@ -11,6 +11,7 @@
   width: 80%;
   word-wrap: break-word;
   @media only screen and (max-width: 400px) {
+    text-align: left;
     max-width: 375px;
     width: 75%;
     word-wrap: break-word;

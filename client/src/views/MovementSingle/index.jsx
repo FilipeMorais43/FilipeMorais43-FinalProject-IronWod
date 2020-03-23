@@ -52,9 +52,6 @@ class MovementSingle extends Component {
               <p> {this.state.movement.protip}</p>
               <ResponsivePlayer url={this.state.movement.video} />
             </section>
-
-         
-          
           </Fragment>
         )}
       </div>

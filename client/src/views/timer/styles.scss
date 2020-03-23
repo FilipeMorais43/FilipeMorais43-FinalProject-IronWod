@@ -9,6 +9,10 @@
 
 .buttons {
   display: flex;
+  @media only screen and (max-width: 400px) {
+    text-align: center;
+    justify-content: center;
+  }
 }
 
 #timer {
