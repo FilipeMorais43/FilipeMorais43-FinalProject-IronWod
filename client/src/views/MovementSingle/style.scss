@@ -10,7 +10,7 @@
   max-width: 800px;
   width: 80%;
   word-wrap: break-word;
-  @media only screen and (max-width: 375px) {
+  @media only screen and (max-width: 400px) {
     max-width: 375px;
     width: 75%;
     word-wrap: break-word;
@@ -19,7 +19,7 @@
 .movement__single__video {
   width: 50%;
   height: 50%;
-  @media only screen and (max-width: 375px) {
+  @media only screen and (max-width: 400px) {
     margin-top: 2em;
     width: 80%;
     height: 80%;
@@ -35,7 +35,7 @@ h1 {
 
 h4 {
   text-decoration: underline;
-  @media only screen and (max-width: 375px) {
+  @media only screen and (max-width: 400px) {
     text-align: center;
   }
 }

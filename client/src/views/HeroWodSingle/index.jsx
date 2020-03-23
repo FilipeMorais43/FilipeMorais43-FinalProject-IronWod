@@ -5,7 +5,6 @@ import { single } from '../../services/wod';
 import ResponsivePlayer from '../../components/ReactPlayer/ResponsivePlayer';
 import Stopwatch from '../timer';
 
-
 class WodSingle extends Component {
   constructor(props) {
     super(props);
@@ -51,13 +50,10 @@ class WodSingle extends Component {
               <h4>
                 <strong>Timer:</strong>
               </h4>
-          <Stopwatch />
-            <h4>
-                <strong>Video:</strong>
-              </h4>
+              <Stopwatch />
+
               <ResponsivePlayer url={this.state.wod.video} />
             </section>
-         
           </Fragment>
         )}
       </div>

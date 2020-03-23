@@ -18,7 +18,7 @@ h3 {
   margin-top: 2em;
   margin-bottom: 2em;
   width: 30%;
-  @media only screen and (max-width: 375px) {
+  @media only screen and (max-width: 400px) {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -35,7 +35,7 @@ h3 {
   padding: 0 1em;
   display: flex;
   flex-wrap: wrap;
-  @media only screen and (max-width: 375px) {
+  @media only screen and (max-width: 400px) {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -46,7 +46,7 @@ h3 {
   margin: 50px;
   box-shadow: 5px 5px 11px 7px darkgrey;
   border: 1px medium black;
-  @media only screen and (max-width: 375px) {
+  @media only screen and (max-width: 400px) {
     display: flex;
     flex-direction: column;
     align-items: center;
