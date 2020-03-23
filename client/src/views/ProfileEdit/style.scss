@@ -21,13 +21,16 @@
 
 input,
 textarea {
+  width: auto;
   display: flex;
-  width: 60%;
   padding: 0.5em;
   border: 1px solid hsla(230, 20%, 85%, 1);
   font: inherit;
   color: black;
   margin-bottom: 1em;
+  @media only screen and (max-width: 375px) {
+    width: 60%;
+  }
 }
 
 label {
