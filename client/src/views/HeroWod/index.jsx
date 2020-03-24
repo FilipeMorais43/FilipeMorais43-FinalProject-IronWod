@@ -58,7 +58,7 @@ class HeroWod extends Component {
                       <Card.Img
                         variant="top"
                         src={wod.picture}
-                        style={{ maxHeight: '12em', objectFit: 'cover' }}
+                        style={{ maxHeight: '12em', objectFit: 'fill' }}
                       />
                       <Card.Body>
                         <Card.Title text="primary">{wod.name}</Card.Title>
