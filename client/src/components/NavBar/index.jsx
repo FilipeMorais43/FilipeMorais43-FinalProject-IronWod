@@ -17,7 +17,7 @@ const NavBar = props => {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="nav-bar" sticky="top">
       <div className="profile__picture">
-        <img src="/logo.png" alt="logo" />
+        <img src="/logo2.png" alt="logo" />
       </div>
       <Navbar.Brand href="/"> IronWod</Navbar.Brand>
       {(props.user && (
