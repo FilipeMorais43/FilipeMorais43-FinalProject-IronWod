@@ -16,7 +16,7 @@ const NavBar = props => {
   };
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="nav-bar"  sticky="top">
-      <Navbar.Brand href="/">IronWod</Navbar.Brand>
+      <Navbar.Brand href="/"> IronWod</Navbar.Brand>
       {(props.user && (
         <Fragment>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
