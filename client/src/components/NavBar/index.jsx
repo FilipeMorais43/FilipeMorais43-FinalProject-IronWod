@@ -1,4 +1,4 @@
-import React, { Fragment} from 'react';
+import React, { Fragment } from 'react';
 
 import './style.scss';
 import { Navbar, Nav } from 'react-bootstrap';
@@ -15,7 +15,10 @@ const NavBar = props => {
       });
   };
   return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="nav-bar"  sticky="top">
+    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="nav-bar" sticky="top">
+      <div className="profile__picture">
+        <img src="/logo2.png" alt="logo" />
+      </div>
       <Navbar.Brand href="/"> IronWod</Navbar.Brand>
       {(props.user && (
         <Fragment>
