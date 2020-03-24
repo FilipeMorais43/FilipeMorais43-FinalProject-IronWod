@@ -11,13 +11,13 @@ class NewMovement extends Component {
       protip: '',
       description: '',
       execution: '',
-      picture:'',
-      video:''
+      picture: '',
+      video: ''
     };
 
     this.addMovement = this.addMovement.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    this.handleFileInputChange = this.handleFileInputChange.bind(this)
+    this.handleFileInputChange = this.handleFileInputChange.bind(this);
   }
 
   handleChange = event => {
@@ -32,7 +32,7 @@ class NewMovement extends Component {
   handleFileInputChange(event) {
     console.dir(event.target);
     const { name, files } = event.target;
-    console.log(name, files)
+    console.log(name, files);
     this.setState({
       [name]: files[0]
     });
@@ -40,9 +40,9 @@ class NewMovement extends Component {
 
   addMovement(event) {
     event.preventDefault();
-    const { name, setup, protip, description, execution, picture,video} = this.state;
-    console.log(picture)
-    create({ name, setup, protip, description, execution, picture,video })
+    const { name, setup, protip, description, execution, picture, video } = this.state;
+    console.log(picture);
+    create({ name, setup, protip, description, execution, picture, video })
       .then(result => {
         console.log(result);
         this.props.history.push('/movement');
@@ -53,7 +53,6 @@ class NewMovement extends Component {
   render() {
     return (
       <form onSubmit={this.addMovement}>
-        {/* <pre>{JSON.stringify(this.state)}</pre> */}
         <label htmlFor="name">Name</label>
         <input
           type="text"
@@ -61,7 +60,7 @@ class NewMovement extends Component {
           name="name"
           value={this.state.name}
           onChange={this.handleChange}
-          placeholder="Movement name"
+          placeholder="ex: Burpee"
         />
         <label htmlFor="description">Description</label>
         <input
@@ -70,7 +69,7 @@ class NewMovement extends Component {
           name="description"
           value={this.state.description}
           onChange={this.handleChange}
-          placeholder="Movement description"
+          placeholder="Description of the movement"
         />
         <label htmlFor="setup">Setup</label>
         <input
@@ -79,7 +78,7 @@ class NewMovement extends Component {
           name="setup"
           value={this.state.setup}
           onChange={this.handleChange}
-          placeholder="Movement setup"
+          placeholder="ex: Stand in an athletic position with your core braced."
         />
         <label htmlFor="execution">Execution</label>
         <input
@@ -88,7 +87,7 @@ class NewMovement extends Component {
           name="execution"
           value={this.state.execution}
           onChange={this.handleChange}
-          placeholder="Movement execution"
+          placeholder="Explain the execution"
         />
         <label htmlFor="protip">Protip</label>
         <input
@@ -97,16 +96,10 @@ class NewMovement extends Component {
           name="protip"
           value={this.state.protip}
           onChange={this.handleChange}
-          placeholder="Movement protip"
+          placeholder="Do you have a Pro-tip?"
         />
         <label htmlFor="picture">Picture</label>
-        <input
-          type="file"
-          id="picture"
-          name="picture"
-          onChange={this.handleFileInputChange}
-        
-        />
+        <input type="file" id="picture" name="picture" onChange={this.handleFileInputChange} />
         <label htmlFor="video">Video</label>
         <input
           type="text"
@@ -114,7 +107,7 @@ class NewMovement extends Component {
           name="video"
           value={this.state.video}
           onChange={this.handleChange}
-          placeholder="Movement video"
+          placeholder="Video URL"
         />
 
         <button type="submit">Add New</button>

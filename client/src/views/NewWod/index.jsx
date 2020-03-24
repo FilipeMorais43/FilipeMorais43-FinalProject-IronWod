@@ -10,13 +10,13 @@ class NewWod extends Component {
       wod: '',
       score: '',
       tips: '',
-      picture:'',
-      video:''
+      picture: '',
+      video: ''
     };
 
     this.addWod = this.addWod.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    this.handleFileInputChange = this.handleFileInputChange.bind(this)
+    this.handleFileInputChange = this.handleFileInputChange.bind(this);
   }
 
   handleChange = event => {
@@ -31,7 +31,7 @@ class NewWod extends Component {
   handleFileInputChange(event) {
     console.dir(event.target);
     const { name, files } = event.target;
-    console.log(name, files)
+    console.log(name, files);
     this.setState({
       [name]: files[0]
     });
@@ -41,8 +41,8 @@ class NewWod extends Component {
     event.preventDefault();
     console.log('USER_ID', this.props.user._id);
     const user = this.props.user._id;
-    const { name, wod, score, tips ,picture, video } = this.state;
-    create({ name, wod, score, tips, picture,video, user })
+    const { name, wod, score, tips, picture, video } = this.state;
+    create({ name, wod, score, tips, picture, video, user })
       .then(result => {
         console.log(result);
         this.props.history.push('/mywods');
@@ -53,7 +53,6 @@ class NewWod extends Component {
   render() {
     return (
       <form onSubmit={this.addWod}>
-        {/* <pre>{JSON.stringify(this.state)}</pre> */}
         <label htmlFor="name">Name</label>
         <input
           type="text"
@@ -61,10 +60,11 @@ class NewWod extends Component {
           name="name"
           value={this.state.name}
           onChange={this.handleChange}
-          placeholder="Wod name"
+          placeholder="ex:Wod for Heros"
         />
         <label htmlFor="wod">Wod</label>
-        <textarea rows="7"
+        <textarea
+          rows="7"
           type="textarea"
           id="wod"
           name="wod"
@@ -82,7 +82,7 @@ class NewWod extends Component {
           name="score"
           value={this.state.score}
           onChange={this.handleChange}
-          placeholder="Score"
+          placeholder="ex:Number of reps"
         />
         <label htmlFor="tips">Tips</label>
         <input
@@ -91,16 +91,10 @@ class NewWod extends Component {
           name="tips"
           value={this.state.tips}
           onChange={this.handleChange}
-          placeholder="Wod tips"
+          placeholder="Do you have a tip?"
         />
-            <label htmlFor="picture">Picture</label>
-        <input
-          type="file"
-          id="picture"
-          name="picture"
-          onChange={this.handleFileInputChange}
-        
-        />
+        <label htmlFor="picture">Picture</label>
+        <input type="file" id="picture" name="picture" onChange={this.handleFileInputChange} />
         <label htmlFor="video">Video</label>
         <input
           type="text"
@@ -108,7 +102,7 @@ class NewWod extends Component {
           name="video"
           value={this.state.video}
           onChange={this.handleChange}
-          placeholder="Wod video"
+          placeholder="Video URL"
         />
         <button type="submit">Add New</button>
       </form>
